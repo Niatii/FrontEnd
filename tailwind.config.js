@@ -6,11 +6,17 @@ export default {
     "./resources/**/*.vue",
   ],
   theme: {
-    colors: {
-      'blue': '#5268B9',
-      'white': '#D9D9D9',
+    
+    fontFamily: {
+      sans: ['Inter', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      colors: {
+        'blue': '#5268B9',
+        'white': '#D9D9D9',
+        'bluem': '#CEE0F0',
+      },
+    },
   },
   plugins: [],
 }
