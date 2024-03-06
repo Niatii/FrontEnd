@@ -12,10 +12,11 @@ export default {
     },
     extend: {
       colors: {
-        'blue': '#5268B9',
-        'white': '#D9D9D9',
-        'bluem': '#CEE0F0',
+        'nav': '#03428B',
+        'fot': '#F2F2F2',
+        'latar': '#C2D2DA',
       },
+      
     },
   },
   plugins: [],
