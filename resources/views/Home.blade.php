@@ -15,11 +15,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- library fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-XH643b050y3F1776q8r8473J38+87772561ew528268559a01948a892997f0879f77a3937c" crossorigin="anonymous" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 
     <title>Home</title>
 </head>
-<body class="bg-fot">
+<body class="bg-latar">
     <!-- Header Start -->
     <header class="w-full bg-transparent fixed top-0 left-0 h-28">
         <div class="container">
@@ -133,7 +134,7 @@
     <!-- Header End -->
 
     <!-- Hero Section Start -->
-    <section id="home" class="pt-36 sm:pt-40 pb-12 bg-latar">
+    <section id="home" class="pt-36 sm:pt-40 mb-60">
         <div class="container max-w-full flex justify-center">
             <div class="max-w-full self-center px-3 md:px-10">
                 <div>
@@ -150,40 +151,70 @@
 
     <!-- Footer Start -->
     <footer class="bg-fot">
-        <div class="container max-w-full pb-12 pt-2">
-            <div class="flex justify-center">
-                <div class="mx-2 text-xs sm:text-base sm:mx-12 lg:mx-20">
-                  <p class=" font-bold ">Link Reference</p>
-                  <hr class="">
+        <div class="container max-w-full pt-2">
+            <div class="grid grid-cols-4 lg:grid-cols-5 gap-3">
+                <div class="mx-2 text-xs sm:text-base sm:mx-12 lg:mr-12 w-8/12">
+                  <p class=" font-bold">Tentang Kami</p>
+                  <hr class="border-t-2 border-black my-1">
                   <p><a href="#" class="hover:text-sky-600">Link</a></p>
                   <p><a href="#" class="hover:text-sky-600">Link</a></p>
                   <p><a href="#" class="hover:text-sky-600">Link</a></p>
                   <p><a href="#" class="hover:text-sky-600">Link</a></p>
                 </div>
-                <div class="mx-2 text-xs sm:text-base sm:mx-12 lg:mx-20">
-                  <p class="font-bold ">Link Reference</p>
-                  <hr class="">
+                <div class="mx-2 text-xs sm:text-base sm:mx-12 lg:mr-12 w-8/12" >
+                  <p class="font-bold ">Konsultasi</p>
+                  <hr class="border-t-2 border-black my-1">
                   <p><a href="#" class="hover:text-sky-600">Link</a></p>
                   <p><a href="#" class="hover:text-sky-600">Link</a></p>
                   <p><a href="#" class="hover:text-sky-600">Link</a></p>
                   <p><a href="#" class="hover:text-sky-600">Link</a></p>
                 </div>
-                <div class="mx-2 text-xs sm:text-base sm:mx-12 lg:mx-20">
-                  <p class="font-bold">Link Reference</p>
-                  <hr class="">
+                <div class="mx-2 text-xs sm:text-base sm:mx-12 lg:mr-12 w-8/12">
+                  <p class="font-bold">Riset</p>
+                  <hr class="border-t-2 border-black my-1">
                   <p><a href="#" class="hover:text-sky-600">Link</a></p>
                   <p><a href="#" class="hover:text-sky-600">Link</a></p>
                   <p><a href="#" class="hover:text-sky-600">Link</a></p>
                   <p><a href="#" class="hover:text-sky-600">Link</a></p>
                 </div>
-                <div class="mx-2 text-xs sm:text-base sm:mx-12 lg:mx-20">
-                  <p class="font-bold ">Link Reference</p>
-                  <hr class="">
+                <div class="mx-2 text-xs sm:text-base sm:mx-12 lg:mr-12 w-8/12">
+                  <p class="font-bold ">Publikasi</p>
+                  <hr class="border-t-2 border-black my-1">
                   <p><a href="#" class="hover:text-sky-600">Link</a></p>
                   <p><a href="#" class="hover:text-sky-600">Link</a></p>
                   <p><a href="#" class="hover:text-sky-600">Link</a></p>
                   <p><a href="#" class="hover:text-sky-600">Link</a></p>
                 </div>
+                <div class="mx-2 text-xs sm:text-base sm:mx-12 lg:mr-12 w-8/12">
+                  <p class="font-bold ">Akademi</p>
+                  <hr class="border-t-2 border-black my-1">
+                  <p><a href="#" class="hover:text-sky-600">Link</a></p>
+                  <p><a href="#" class="hover:text-sky-600">Link</a></p>
+                  <p><a href="#" class="hover:text-sky-600">Link</a></p>
+                  <p><a href="#" class="hover:text-sky-600">Link</a></p>
+                </div>
+                <div class="mx-2 text-xs sm:text-base sm:mx-12 lg:mr-12 w-8/12">
+                  <p class="font-bold ">Berita</p>
+                  <hr class="border-t-2 border-black my-1">
+                  <p><a href="#" class="hover:text-sky-600">Link</a></p>
+                  <p><a href="#" class="hover:text-sky-600">Link</a></p>
+                  <p><a href="#" class="hover:text-sky-600">Link</a></p>
+                  <p><a href="#" class="hover:text-sky-600">Link</a></p>
+                </div>
+            </div>
+            <div class="mt-8 mx-2 lg:mt-12 lg:ml-12">
+                <p class="font-bold text-base lg:text-2xl">Link Reference</p>
+                <div class="flex">
+                    <a href="#"><i class="fab fa-facebook mr-2 lg:text-xl"></i></a>
+                    <a href="#"><i class="fab fa-instagram mr-2 lg:text-xl"></i></a>
+                    <a href="#"><i class="fab fa-twitter mr-2 lg:text-xl"></i></a>
+                    <a href="#"><i class="fab fa-youtube lg:text-xl"></i></a>
+                    <p class="text-[8px] font-sans mt-3 ml-5 lg:text-sm">No Telp 08xx-xxxx-xxx</p>
+                </div>
+                <div class="mt-14 pb-8 text-[6px] lg:text-xs">
+                <p class="text-center"><i class="far fa-copyright"></i> COPYRIGHT 2024 TAX Digital. All rights reserved. Not for further distribution without the permission of TAX digital</p>
+                </div>
+                
             </div>
         </div>
     </footer>
