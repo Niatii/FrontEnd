@@ -28,3 +28,15 @@ Route::get('/konsultasi', function () {
 Route::get('/riset', function () {
     return view('riset');
 });
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/daftar', function () {
+    return view('daftar');
+});
+
+Route::get('/lupakatasandi', function () {
+    return view('lupakatasandi');
+});
