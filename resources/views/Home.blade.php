@@ -32,7 +32,7 @@
                     class="w-8 my-2 mx-1 rounded-full sm:w-10 sm:ml-3"></a>
                 </div>
                 <div>
-                <a href="/login"><img src="{{ asset('storage/properti/1.jpg') }}" alt="gambar properti"
+                <a href="/login"><img src="{{ asset('storage/properti/3.jpg') }}" alt="gambar properti"
                     class="w-8 my-2 mx-2 rounded-lg  sm:w-10 sm:ml-10 sm:mr-4 md:ml-24"></a>
                 </div>
             </div>
