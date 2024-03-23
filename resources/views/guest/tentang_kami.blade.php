@@ -25,224 +25,103 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="bg-latar text-black">
-    <!-- Header Start -->
-    <header class="w-full bg-transparent fixed top-0 left-0 h-28 z-50">
-        <div class="container">
-            <div class="bg-nav w-full absolute top-0 left-0 justify-between flex">
-                <div class="flex">
-                    <a href="#"><img src="{{ asset('storage/properti/1.jpg') }}" alt="gambar properti"
-                    class="w-8 my-2 mx-2 rounded-full sm:w-10 sm:mx-4"></a>
-                    <a href="#"><img src="{{ asset('storage/properti/1.jpg') }}" alt="gambar properti"
-                    class="w-8 my-2 mx-1 rounded-full sm:w-10 sm:ml-3"></a>
-                </div>
-                <div class="relative text-black">
-                    <a href="/login">
-                        <img src="{{ asset('storage/properti/5.jpg') }}" alt="gambar properti" class="w-8 my-2 mx-2 rounded-full sm:w-10 sm:ml-10 sm:mr-4 md:ml-24
-                        object-cover aspect-ratio-1/1">
-                    </a>
-                    
-                </div>
-            </div>
-            <!-- navbar start -->
-            <div class="bg-fot w-full absolute mt-12 sm:mt-14 justify-between flex">
-                <div class="flex items-center px-5">
-                    <button id="hamburger" name="hamburger" type="button" class="block absolute lg:hidden">
-                        <span class="hamburger-line transition duration-500 ease-in-out origin-top-left" ></span>
-                        <span class="hamburger-line transition duration-500 ease-in-out"></span>
-                        <span class="hamburger-line transition duration-500 ease-in-out origin-bottom-left"></span>
-                    </button>
-                    <nav id="nav-menu" class="hidden  bg-fot  absolute py-5 shadow-md rounded-md max-w-[200px] w-full
-                    top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none lg:py-3 lg:w-full">
-                        <ul class="block lg:flex">
-                        <li class="group">
-                                <a href="/" class="text-base text-black py-2 mx-8 flex group-hover:text-sky-600
-                                lg:mx-5 {{ request()->is('/') ? 'text-sky-600' : 'text-black' }}" id="navhome">Home</a>
-                            </li>
-                            <li class="group relative">
-                                <a href="/guest/Tentang Kami" class="text-base text-black py-2 mx-8 flex group-hover:text-sky-600
-                                lg:mx-5 {{ request()->is('guest/Tentang Kami') ? 'text-sky-600' : 'text-black' }}" id="tentangkami">Tentang Kami</a>
-                                
-                            </li>
-                            <li class="group relative ">
-                                <a href="/guest/Konsultasi" class="text-base text-black py-2 mx-8 flex group-hover:text-sky-600
-                                lg:mx-5 {{ request()->is('guest/Konsultasi') ? 'text-sky-600' : 'text-black' }}" id="konsultasi">Konsultasi</a>
-                                
-                            </li>
-                            <li class="group relative">
-                                <a href="/guest/Riset" class="text-base text-black py-2 mx-8 flex group-hover:text-sky-600
-                                lg:mx-5 {{ request()->is('guest/Riset') ? 'text-sky-600' : 'text-black' }}" id="riset">Riset</a>
-                               
-                            </li>
-                            <li class="group relative">
-                                <a href="/guest/Publikasi" class="text-base text-black py-2 mx-8 flex group-hover:text-sky-600
-                                lg:mx-6 {{ request()->is('guest/Publikasi') ? 'text-sky-600' : 'text-black' }}" id="publikasi">Publikasi</a>
-                                
-                            </li>
-                            <li class="group relative text-black ">
-                                <a href="#akademi" class="text-base py-2 mx-8 flex group-hover:text-sky-600
-                                lg:mx-6" id="akademi">Akademi</a>
-                                <ul class="dropdown bg-latar lg:bg-fot hidden lg:absolute py-3 px-8 lg:ml-5 lg:px-5 lg:pt-5 lg:shadow-md lg:rounded-md
-                                w-full transition duration-700"
-                                id="dropdownakademi">
-                                    <li class="my-2"><a href="#pelatihan" class="hover:text-sky-600">Pelatihan</a></li>
-                                    <li class="my-2"><a href="#kegiatan" class="hover:text-sky-600 ">Kegiatan</a></li>
-                                </ul>
-                            </li>
-                            <li class="group relative">
-                                <a href="/guest/Berita" class="text-base text-black py-2 mx-8 flex group-hover:text-sky-600
-                                lg:mx-6 {{ request()->is('guest/Berita') ? 'text-sky-600' : 'text-black' }}" id="berita">Berita</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="my-3 mx-2">
-                    <img src="{{ asset('storage/properti/1.jpg') }}" alt="gambar properti" class="w-8 rounded-lg  sm:w-10 sm:ml-10 sm:mr-2 md:ml-24">
-                </div>   
-            </div>
-            <!-- navbar end -->
-        </div>
-    </header>
-    <!-- Header End -->
+    <!-- header -->
+    @include('components.headerguest')
     
     <!-- Content Start -->
     <section  class="pt-36 sm:pt-40 mb-12 mx-8 flex justify-center">
-        <div class="bg-white w-full rounded-md">
-            <h1 class="text-center font-bold text-wjudul mt-4 md:text-2xl lg:text-3xl md:my-6"
+        <div class="bg-white w-full rounded-md pb-12">
+            <h1 class="text-center font-bold text-wjudul my-4 md:text-2xl lg:text-3xl md:my-8"
             data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
             data-aos-delay="200"
             data-aos-offset="0">Tentang Kami</h1>
-                <div class="card card-side sm:my-4 lg:my-8 mx-4 rounded-none" data-aos="fade-right"
+
+            <div class="px-2 md:px-10 items-center mb-8" data-aos="fade-right"
                 data-aos-offset="150"
                 data-aos-easing="ease-in-sine">
-                <figure><img src="{{ asset('storage/properti/2.jpg') }}" alt="tentang kami" class="w-32 sm:w-64 md:w-72 sm:ml-5 hover:brightness-50"/></figure>
-                    <div class="card-body w-1/2 sm:w-8/12 lg:py-6">
-                        <h2 class="card-title text-xs md:text-lg">Title Foto</h2>
-                        <p class="text-[10px] overflow-hidden md:text-xs h-8">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae excepturi sapiente nam cumque molestias delectus beatae, incidunt officia eos accusamus, quibusdam cum. Placeat porro ex minima magni quo! Temporibus quasi aspernatur autem voluptate omnis recusandae reprehenderit dolorum nostrum! Qui amet aliquid porro natus sint. Nam optio consequuntur perferendis labore voluptas illo, et hic necessitatibus vitae sunt facere aperiam iste corrupti.
-                        </p>
-                        <hr class="border-t-1 border-black">
-                        <div class="card-actions">
-                        <a href="/guest/Detail Tentang Kami" class="text-[9px] md:text-[10px] hover:text-sky-600">Selengkapnya...</a>
-                        </div>
+                <div class="w-full grid grid-cols-3">
+                    <div class="flex items-center">
+                        <a href="/admin/tentang kami/detail">
+                            <img class="w-full hover:brightness-50" src="{{ asset('storage/properti/2.jpg') }}" alt="gambar pelatihan" />
+                        </a>
+                    </div>
+                    <div class="mx-2 h-20 sm:px-2 sm:h-28 md:h-44 sm:pt-3 md:pt-5 overflow-hidden col-span-2 ">
+                        <h5 class="font-bold text-[11px] md:text-lg lg:text-2xl overflow-hidden h-4 md:h-10 ">Judul Tentang Kami</h5>
+                        <p class="text-[9px] md:text-base overflow-hidden h-[40px] sm:h-10 md:h-12 lg:h-[72px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. At repellendus corrupti nobis perferendis eos officiis iusto rem iure ad quis numquam natus error nesciunt, deserunt expedita nam veniam nihil nemo voluptatibus, recusandae quia eaque, laudantium aperiam? Delectus dicta repudiandae rem provident optio obcaecati nulla, necessitatibus, adipisci fuga perspiciatis quibusdam. Voluptates, minus facere eius quibusdam officia reprehenderit alias voluptatum quidem autem dicta iusto? Quos atque reprehenderit itaque officia aliquid enim. Sit, itaque repellat. Natus nobis accusantium doloribus tempora deleniti vitae quidem, nihil est aperiam aliquid, officiis repellendus debitis quos quae deserunt similique reiciendis molestiae ipsa odit quas, corporis consectetur dolores. Voluptate?</p>
+                        <hr class="border-t-1 border-black mt-1">
+                        <a href="/admin/tentang kami/detail" class="text-[8px] md:text-xs lg:text-base hover:text-sky-600">
+                            selengkapnya...
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <div class="card card-side sm:my-4 lg:my-8 mx-4 rounded-none" data-aos="fade-right"
+            <div class="px-2 md:px-10 items-center mb-8" data-aos="fade-right"
                 data-aos-offset="150"
                 data-aos-easing="ease-in-sine">
-                <figure><img src="{{ asset('storage/properti/2.jpg') }}" alt="tentang kami" class="w-32 sm:w-64 md:w-72 sm:ml-5 hover:brightness-50"/></figure>
-                    <div class="card-body w-1/2 sm:w-8/12 lg:py-6">
-                        <h2 class="card-title text-xs md:text-lg">Title Foto</h2>
-                        <p class="text-[10px] overflow-hidden md:text-xs h-8">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae excepturi sapiente nam cumque molestias delectus beatae, incidunt officia eos accusamus, quibusdam cum. Placeat porro ex minima magni quo! Temporibus quasi aspernatur autem voluptate omnis recusandae reprehenderit dolorum nostrum! Qui amet aliquid porro natus sint. Nam optio consequuntur perferendis labore voluptas illo, et hic necessitatibus vitae sunt facere aperiam iste corrupti.
-                        </p>
-                        <hr class="border-t-1 border-black">
-                        <div class="card-actions">
-                        <a href="/guest/Detail Tentang Kami" class="text-[9px] md:text-[10px] hover:text-sky-600">Selengkapnya...</a>
-                        </div>
+                <div class="w-full grid grid-cols-3">
+                    <div class="flex items-center">
+                        <a href="/admin/tentang kami/detail">
+                            <img class="w-full hover:brightness-50" src="{{ asset('storage/properti/2.jpg') }}" alt="gambar pelatihan" />
+                        </a>
+                    </div>
+                    <div class="mx-2 h-20 sm:px-2 sm:h-28 md:h-44 sm:pt-3 md:pt-5 overflow-hidden col-span-2 ">
+                        <h5 class="font-bold text-[11px] md:text-lg lg:text-2xl overflow-hidden h-4 md:h-10 ">Judul Tentang Kami</h5>
+                        <p class="text-[9px] md:text-base overflow-hidden h-[40px] sm:h-10 md:h-12 lg:h-[72px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. At repellendus corrupti nobis perferendis eos officiis iusto rem iure ad quis numquam natus error nesciunt, deserunt expedita nam veniam nihil nemo voluptatibus, recusandae quia eaque, laudantium aperiam? Delectus dicta repudiandae rem provident optio obcaecati nulla, necessitatibus, adipisci fuga perspiciatis quibusdam. Voluptates, minus facere eius quibusdam officia reprehenderit alias voluptatum quidem autem dicta iusto? Quos atque reprehenderit itaque officia aliquid enim. Sit, itaque repellat. Natus nobis accusantium doloribus tempora deleniti vitae quidem, nihil est aperiam aliquid, officiis repellendus debitis quos quae deserunt similique reiciendis molestiae ipsa odit quas, corporis consectetur dolores. Voluptate?</p>
+                        <hr class="border-t-1 border-black mt-1">
+                        <a href="/admin/tentang kami/detail" class="text-[8px] md:text-xs lg:text-base hover:text-sky-600">
+                            selengkapnya...
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <div class="card card-side sm:my-4 lg:my-8 mx-4 rounded-none" data-aos="fade-right"
+            <div class="px-2 md:px-10 items-center mb-8" data-aos="fade-right"
                 data-aos-offset="150"
                 data-aos-easing="ease-in-sine">
-                <figure><img src="{{ asset('storage/properti/2.jpg') }}" alt="tentang kami" class="w-32 sm:w-64 md:w-72 sm:ml-5 hover:brightness-50"/></figure>
-                    <div class="card-body w-1/2 sm:w-8/12 lg:py-6">
-                        <h2 class="card-title text-xs md:text-lg">Title Foto</h2>
-                        <p class="text-[10px] overflow-hidden md:text-xs h-8">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae excepturi sapiente nam cumque molestias delectus beatae, incidunt officia eos accusamus, quibusdam cum. Placeat porro ex minima magni quo! Temporibus quasi aspernatur autem voluptate omnis recusandae reprehenderit dolorum nostrum! Qui amet aliquid porro natus sint. Nam optio consequuntur perferendis labore voluptas illo, et hic necessitatibus vitae sunt facere aperiam iste corrupti.
-                        </p>
-                        <hr class="border-t-1 border-black">
-                        <div class="card-actions">
-                        <a href="/guest/Detail Tentang Kami" class="text-[9px] md:text-[10px] hover:text-sky-600">Selengkapnya...</a>
-                        </div>
+                <div class="w-full grid grid-cols-3">
+                    <div class="flex items-center">
+                        <a href="/admin/tentang kami/detail">
+                            <img class="w-full hover:brightness-50" src="{{ asset('storage/properti/2.jpg') }}" alt="gambar pelatihan" />
+                        </a>
+                    </div>
+                    <div class="mx-2 h-20 sm:px-2 sm:h-28 md:h-44 sm:pt-3 md:pt-5 overflow-hidden col-span-2 ">
+                        <h5 class="font-bold text-[11px] md:text-lg lg:text-2xl overflow-hidden h-4 md:h-10 ">Judul Tentang Kami</h5>
+                        <p class="text-[9px] md:text-base overflow-hidden h-[40px] sm:h-10 md:h-12 lg:h-[72px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. At repellendus corrupti nobis perferendis eos officiis iusto rem iure ad quis numquam natus error nesciunt, deserunt expedita nam veniam nihil nemo voluptatibus, recusandae quia eaque, laudantium aperiam? Delectus dicta repudiandae rem provident optio obcaecati nulla, necessitatibus, adipisci fuga perspiciatis quibusdam. Voluptates, minus facere eius quibusdam officia reprehenderit alias voluptatum quidem autem dicta iusto? Quos atque reprehenderit itaque officia aliquid enim. Sit, itaque repellat. Natus nobis accusantium doloribus tempora deleniti vitae quidem, nihil est aperiam aliquid, officiis repellendus debitis quos quae deserunt similique reiciendis molestiae ipsa odit quas, corporis consectetur dolores. Voluptate?</p>
+                        <hr class="border-t-1 border-black mt-1">
+                        <a href="/admin/tentang kami/detail" class="text-[8px] md:text-xs lg:text-base hover:text-sky-600">
+                            selengkapnya...
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <div class="card card-side sm:my-4 lg:my-8 mx-4 rounded-none" data-aos="fade-right"
+            <div class="px-2 md:px-10 items-center mb-8" data-aos="fade-right"
                 data-aos-offset="150"
                 data-aos-easing="ease-in-sine">
-                <figure><img src="{{ asset('storage/properti/2.jpg') }}" alt="tentang kami" class="w-32 sm:w-64 md:w-72 sm:ml-5 hover:brightness-50"/></figure>
-                    <div class="card-body w-1/2 sm:w-8/12 lg:py-6">
-                        <h2 class="card-title text-xs md:text-lg">Title Foto</h2>
-                        <p class="text-[10px] overflow-hidden md:text-xs h-8">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae excepturi sapiente nam cumque molestias delectus beatae, incidunt officia eos accusamus, quibusdam cum. Placeat porro ex minima magni quo! Temporibus quasi aspernatur autem voluptate omnis recusandae reprehenderit dolorum nostrum! Qui amet aliquid porro natus sint. Nam optio consequuntur perferendis labore voluptas illo, et hic necessitatibus vitae sunt facere aperiam iste corrupti.
-                        </p>
-                        <hr class="border-t-1 border-black">
-                        <div class="card-actions">
-                        <a href="/guest/Detail Tentang Kami" class="text-[9px] md:text-[10px] hover:text-sky-600">Selengkapnya...</a>
-                        </div>
+                <div class="w-full grid grid-cols-3">
+                    <div class="flex items-center">
+                        <a href="/admin/tentang kami/detail">
+                            <img class="w-full hover:brightness-50" src="{{ asset('storage/properti/2.jpg') }}" alt="gambar pelatihan" />
+                        </a>
+                    </div>
+                    <div class="mx-2 h-20 sm:px-2 sm:h-28 md:h-44 sm:pt-3 md:pt-5 overflow-hidden col-span-2 ">
+                        <h5 class="font-bold text-[11px] md:text-lg lg:text-2xl overflow-hidden h-4 md:h-10 ">Judul Tentang Kami</h5>
+                        <p class="text-[9px] md:text-base overflow-hidden h-[40px] sm:h-10 md:h-12 lg:h-[72px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. At repellendus corrupti nobis perferendis eos officiis iusto rem iure ad quis numquam natus error nesciunt, deserunt expedita nam veniam nihil nemo voluptatibus, recusandae quia eaque, laudantium aperiam? Delectus dicta repudiandae rem provident optio obcaecati nulla, necessitatibus, adipisci fuga perspiciatis quibusdam. Voluptates, minus facere eius quibusdam officia reprehenderit alias voluptatum quidem autem dicta iusto? Quos atque reprehenderit itaque officia aliquid enim. Sit, itaque repellat. Natus nobis accusantium doloribus tempora deleniti vitae quidem, nihil est aperiam aliquid, officiis repellendus debitis quos quae deserunt similique reiciendis molestiae ipsa odit quas, corporis consectetur dolores. Voluptate?</p>
+                        <hr class="border-t-1 border-black mt-1">
+                        <a href="/admin/tentang kami/detail" class="text-[8px] md:text-xs lg:text-base hover:text-sky-600">
+                            selengkapnya...
+                        </a>
                     </div>
                 </div>
-
+            </div>
         </div>
     </section>
     <!-- Content End -->
 
-    <!-- Footer Start -->
-    <footer class="bg-fot text-black mt-20" data-aos="fade-up">
-        <div class="container max-w-full pt-2">
-            <div class="grid grid-cols-4 lg:grid-cols-5 gap-3">
-                <div class="mx-2 text-xs sm:text-base sm:mx-12 lg:mr-12 w-8/12">
-                  <p class=" font-bold">Tentang Kami</p>
-                  <hr class="border-t-2 border-black my-1">
-                  <p><a href="/guest/Detail Tentang Kami" class="hover:text-sky-600">Link</a></p>
-                  <p><a href="/guest/Detail Tentang Kami" class="hover:text-sky-600">Link</a></p>
-                  <p><a href="/guest/Detail Tentang Kami" class="hover:text-sky-600">Link</a></p>
-                  <p><a href="/guest/Detail Tentang Kami" class="hover:text-sky-600">Link</a></p>
-                </div>
-                <div class="mx-2 text-xs sm:text-base sm:mx-12 lg:mr-12 w-8/12" >
-                  <p class="font-bold ">Konsultasi</p>
-                  <hr class="border-t-2 border-black my-1">
-                  <p><a href="/guest/Detail Konsultasi" class="hover:text-sky-600">Link</a></p>
-                  <p><a href="/guest/Detail Konsultasi" class="hover:text-sky-600">Link</a></p>
-                  <p><a href="/guest/Detail Konsultasi" class="hover:text-sky-600">Link</a></p>
-                  <p><a href="/guest/Detail Konsultasi" class="hover:text-sky-600">Link</a></p>
-                </div>
-                <div class="mx-2 text-xs sm:text-base sm:mx-12 lg:mr-12 w-8/12">
-                  <p class="font-bold">Riset</p>
-                  <hr class="border-t-2 border-black my-1">
-                  <p><a href="/guest/Detail Riset" class="hover:text-sky-600">Link</a></p>
-                  <p><a href="/guest/Detail Riset" class="hover:text-sky-600">Link</a></p>
-                  <p><a href="/guest/Detail Riset" class="hover:text-sky-600">Link</a></p>
-                  <p><a href="/guest/Detail Riset" class="hover:text-sky-600">Link</a></p>
-                </div>
-                <div class="mx-2 text-xs sm:text-base sm:mx-12 lg:mr-12 w-8/12">
-                  <p class="font-bold ">Publikasi</p>
-                  <hr class="border-t-2 border-black my-1">
-                  <p><a href="/guest/Detail Publikasi" class="hover:text-sky-600">Link</a></p>
-                  <p><a href="/guset/Detail Publikasi" class="hover:text-sky-600">Link</a></p>
-                  <p><a href="/guset/Detail Publikasi" class="hover:text-sky-600">Link</a></p>
-                  <p><a href="/guset/Detail Publikasi" class="hover:text-sky-600">Link</a></p>
-                </div>
-                <div class="mx-2 text-xs sm:text-base sm:mx-12 lg:mr-12 w-8/12">
-                  <p class="font-bold ">Akademi</p>
-                  <hr class="border-t-2 border-black my-1">
-                  <p><a href="#" class="hover:text-sky-600">Link</a></p>
-                  <p><a href="#" class="hover:text-sky-600">Link</a></p>
-                  <p><a href="#" class="hover:text-sky-600">Link</a></p>
-                  <p><a href="#" class="hover:text-sky-600">Link</a></p>
-                </div>
-        
-            </div>
-            <div class="mt-8 mx-2 sm:mx-12  lg:mt-12 lg:ml-12">
-                <p class="font-bold text-base lg:text-2xl">Link Reference</p>
-                <div class="flex">
-                    <a href="https://www.facebook.com/NASA?mibextid=ZbWKwL"><i class="fab fa-facebook mr-2 lg:text-xl"></i></a>
-                    <a href="https://www.instagram.com/nasa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram mr-2 lg:text-xl"></i></a>
-                    <a href="https://x.com/NASA?s=20"><i class="fab fa-twitter mr-2 lg:text-xl"></i></a>
-                    <a href="https://www.youtube.com/@NASA"><i class="fab fa-youtube lg:text-xl"></i></a>
-                    <p class="text-[8px] font-sans mt-3 ml-5 lg:text-sm">No Telp 08xx-xxxx-xxx</p>
-                </div>
-                <div class="mt-14 pb-8 text-[6px] lg:text-xs ">
-                <p class="text-center"><i class="far fa-copyright"></i> COPYRIGHT 2024 TAX Digital. All rights reserved. Not for further distribution without the permission of TAX digital</p>
-                </div>
-                
-            </div>
-        </div>
-    </footer>
-    <!-- Footer End -->
+    <!-- footer -->
+    @include('components.footerguest')
 
 
 
