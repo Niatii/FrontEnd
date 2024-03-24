@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,22 +25,17 @@
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 <body class="bg-latar text-black">
     <!-- header -->
     @include('components.headerguest')
-    
+
     <!-- Content Start -->
-    <section  class="pt-36 sm:pt-40 mb-12 mx-8 flex justify-center">
+    <section class="pt-36 sm:pt-40 mb-12 mx-8 flex justify-center">
         <div class="bg-white w-full rounded-md pb-12">
-            <h1 class="text-center font-bold text-wjudul my-4 md:text-2xl lg:text-3xl md:my-8"
-            data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-delay="200"
-            data-aos-offset="0">Tentang Kami</h1>
+            <h1 class="text-center font-bold text-wjudul my-4 md:text-2xl lg:text-3xl md:my-8" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="200" data-aos-offset="0">Tentang Kami</h1>
 
-            <div class="px-2 md:px-10 items-center mb-8" data-aos="fade-right"
-                data-aos-offset="150"
-                data-aos-easing="ease-in-sine">
+            <div class="px-2 md:px-10 items-center mb-8" data-aos="fade-right" data-aos-offset="150" data-aos-easing="ease-in-sine">
                 <div class="w-full grid grid-cols-3">
                     <div class="flex items-center">
                         <a href="/admin/tentang kami/detail">
@@ -57,9 +53,7 @@
                 </div>
             </div>
 
-            <div class="px-2 md:px-10 items-center mb-8" data-aos="fade-right"
-                data-aos-offset="150"
-                data-aos-easing="ease-in-sine">
+            <div class="px-2 md:px-10 items-center mb-8" data-aos="fade-right" data-aos-offset="150" data-aos-easing="ease-in-sine">
                 <div class="w-full grid grid-cols-3">
                     <div class="flex items-center">
                         <a href="/admin/tentang kami/detail">
@@ -77,9 +71,7 @@
                 </div>
             </div>
 
-            <div class="px-2 md:px-10 items-center mb-8" data-aos="fade-right"
-                data-aos-offset="150"
-                data-aos-easing="ease-in-sine">
+            <div class="px-2 md:px-10 items-center mb-8" data-aos="fade-right" data-aos-offset="150" data-aos-easing="ease-in-sine">
                 <div class="w-full grid grid-cols-3">
                     <div class="flex items-center">
                         <a href="/admin/tentang kami/detail">
@@ -97,9 +89,7 @@
                 </div>
             </div>
 
-            <div class="px-2 md:px-10 items-center mb-8" data-aos="fade-right"
-                data-aos-offset="150"
-                data-aos-easing="ease-in-sine">
+            <div class="px-2 md:px-10 items-center mb-8" data-aos="fade-right" data-aos-offset="150" data-aos-easing="ease-in-sine">
                 <div class="w-full grid grid-cols-3">
                     <div class="flex items-center">
                         <a href="/admin/tentang kami/detail">
@@ -128,8 +118,9 @@
     <!-- javascript -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-    AOS.init();
+        AOS.init();
     </script>
     @vite('resources/js/app.js')
 </body>
+
 </html>
