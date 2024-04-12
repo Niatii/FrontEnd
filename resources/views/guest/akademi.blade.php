@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akademi</title>
 
-    @vite(['resources/css/app.css','resources/js/app.js'])
+    <!-- @vite(['resources/css/app.css','resources/js/app.js']) -->
 
     @vite('resources/css/app.css')
 
@@ -24,7 +24,7 @@
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body class="bg-latar text-black">
+<body class="bg-latar text-black min-h-screen">
     <!-- header -->
     @include('components.headerguest')
     
@@ -45,9 +45,11 @@
                     <div class="hero bg-cover bg-center h-36 md:h-64 lg:h-80" style="background-image: url('/storage/properti/4.jpg');">
                         <div class="hero-overlay bg-opacity-70"></div>
                         <div class="hero-content text-center text-neutral-content">
-                        <div class="max-w-md">
-                            <h1 class="py-3 text-xs md:text-2xl lg:text-4xl text-black group-hover:text-white">Pelatihan</h1>
-                        </div>
+                            <div class="max-w-md">
+                                <h1 class="py-3 text-xs md:text-2xl lg:text-4xl text-black group-hover:text-white">
+                                    Pelatihan
+                                </h1>
+                            </div>
                         </div>
                     </div>
                     </a>
@@ -57,15 +59,15 @@
                     <div class="hero bg-cover bg-center h-36 md:h-64 lg:h-80" style="background-image: url('/storage/properti/4.jpg');">
                         <div class="hero-overlay bg-opacity-70"></div>
                         <div class="hero-content text-center text-neutral-content">
-                        <div class="max-w-md">
-                            <h1 class="py-3  text-xs md:text-2xl lg:text-4xl text-black group-hover:text-white">Kegiatan</h1>
-                        </div>
+                            <div class="max-w-md">
+                                <h1 class="py-3  text-xs md:text-2xl lg:text-4xl text-black group-hover:text-white">
+                                    Kegiatan
+                                </h1>
+                            </div>
                         </div>
                     </div>
                     </a>
                 </div>
-                
-
             </div>
         </div>
     </section>
@@ -73,8 +75,6 @@
 
     <!-- footer -->
     @include('components.footerguest')
-
-
 
     <!-- javascript -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

@@ -12,7 +12,7 @@ Route::get('/daftar', function () {
     return view('auth/daftar');
 });
 
-Route::get('/lupa password', function () {
+Route::get('/LupaPassword', function () {
     return view('auth/lupa_password');
 });
 
@@ -29,38 +29,38 @@ Route::prefix('user')->group(function () {
         return view('user/user_home');
     });
 
-    Route::get('/Tentang Kami', function () {
+    Route::get('/TentangKami', function () {
         return view('user/tentang_kami');
     });
-    Route::get('/Detail Tentang Kami', function () {
+    Route::get('/Detail_TentangKami', function () {
         return view('user/tentangkami_detail');
     });
 
     Route::get('/Riset', function () {
         return view('user/riset');
     });
-    Route::get('/Detail Riset', function () {
+    Route::get('/Detail_Riset', function () {
         return view('user/riset_detail');
     });
 
     Route::get('/Konsultasi', function () {
         return view('user/konsultasi');
     });
-    Route::get('/Detail Konsultasi', function () {
+    Route::get('/Detail_Konsultasi', function () {
         return view('user/konsultasi_detail');
     });
 
     Route::get('/Publikasi', function () {
         return view('user/publikasi');
     });
-    Route::get('/Detail Publikasi', function () {
+    Route::get('/Detail_Publikasi', function () {
         return view('user/publikasi_detail');
     });
 
     Route::get('/Berita', function () {
         return view('user/berita');
     });
-    Route::get('/Detail Berita', function () {
+    Route::get('/Detail_Berita', function () {
         return view('user/berita_detail');
     });
 
@@ -71,7 +71,7 @@ Route::prefix('user')->group(function () {
     Route::get('/Pelatihan', function () {
         return view('user/pelatihan');
     });
-    Route::get('/Detail Pelatihan', function () {
+    Route::get('/Detail_Pelatihan', function () {
         return view('user/pelatihan_detail');
     });
 
@@ -79,7 +79,7 @@ Route::prefix('user')->group(function () {
         return view('user/kegiatan');
     });
 
-    Route::get('/Detail Kegiatan', function () {
+    Route::get('/Detail_Kegiatan', function () {
         return view('user/kegiatan_detail');
     });
 
@@ -87,7 +87,7 @@ Route::prefix('user')->group(function () {
         return view('user/pembayaran');
     });
 
-    Route::get('/Detail Riwayat', function () {
+    Route::get('/Detail_Riwayat', function () {
         return view('user/detail_riwayat');
     });
 
@@ -100,31 +100,31 @@ Route::prefix('user')->group(function () {
 
 Route::prefix('guest')->group(function () {
 
-    Route::get('/Tentang Kami', function () {
+    Route::get('/TentangKami', function () {
         return view('guest/tentang_kami');
     });
-    Route::get('/Detail Tentang Kami', function () {
+    Route::get('/Detail_TentangKami', function () {
         return view('guest/tentangkami_detail');
     });
 
     Route::get('/Riset', function () {
         return view('guest/riset');
     });
-    Route::get('/Detail Riset', function () {
+    Route::get('/Detail_Riset', function () {
         return view('guest/riset_detail');
     });
 
     Route::get('/Konsultasi', function () {
         return view('guest/konsultasi');
     });
-    Route::get('/Detail Konsultasi', function () {
+    Route::get('/Detail_Konsultasi', function () {
         return view('guest/konsultasi_detail');
     });
 
     Route::get('/Publikasi', function () {
         return view('guest/publikasi');
     });
-    Route::get('/Detail Publikasi', function () {
+    Route::get('/Detail_Publikasi', function () {
         return view('guest/publikasi_detail');
     });
 
@@ -143,7 +143,7 @@ Route::prefix('guest')->group(function () {
     Route::get('/Berita', function () {
         return view('guest/berita');
     });
-    Route::get('/Detail Berita', function () {
+    Route::get('/Detail_Berita', function () {
         return view('guest/berita_detail');
     });
 });
@@ -157,7 +157,7 @@ Route::prefix('admin')->group(function () {
         return view('admin/adm_home');
     });
 
-    Route::prefix('tentang kami')->group(function () {
+    Route::prefix('tentangkami')->group(function () {
         Route::get('/', function () {
             return view('admin/tentangkami/tentang_kami');
         });
@@ -188,7 +188,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/pertanyaan', function () {
             return view('admin/konsultasi/pertanyaan');
         });
-        Route::get('/detail pertanyaan', function () {
+        Route::get('/detail_pertanyaan', function () {
             return view('admin/konsultasi/detail_pertanyaan');
         });
     });
@@ -275,7 +275,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/barcode', function () {
             return view('admin/akademi/barcode');
         });
-        Route::get('/detail pembayaran', function () {
+        Route::get('/detail_pembayaran', function () {
             return view('admin/akademi/detail_bayar');
         });
     });
