@@ -36,24 +36,25 @@
             <div class="mx-3 my-2">
                 <h1 class="font-bold text-wjudul my-4 md:text-2xl lg:text-3xl md:my-6 sm:mx-6" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="200" data-aos-offset="0">Konsultasi</h1>
             </div>
-
-            @foreach ($files as $file)
+            
+            
             <div class="grid gap-x-5 sm:gap-x-10 gap-y-2 grid-cols-2 mx-5 sm:mx-10 my-2 ">
-                <div class="w-full" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
-                    <a href="/guest/Detail_Konsultasi">
-                        <img src="{{ asset('storage/properti/2.jpg') }}" alt="konsultasi" class="w-full hover:brightness-50" />
-                    </a>
-                    <div class="py-3">
+                @foreach ($files as $file)
+                    <div class="w-full" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
                         <a href="/guest/Detail_Konsultasi">
-                            <h5 class="mb-2 text-xs md:text-lg font-bold tracking-tight hover:text-sky-600">
-                                {{ $file->title }}
-                            </h5>
+                            <img src="{{ asset('storage/properti/2.jpg') }}" alt="konsultasi" class="w-full hover:brightness-50" />
                         </a>
-                        <p class="mb-3 text-[10px] overflow-hidden md:text-xs h-[62px]">
-                            {{ $file->content }}
-                        </p>
+                        <div class="py-3">
+                            <a href="/guest/Detail_Konsultasi">
+                                <h5 class="mb-2 text-xs md:text-lg font-bold tracking-tight hover:text-sky-600">
+                                    {{ $file->title }}
+                                </h5>
+                            </a>
+                            <p class="mb-3 text-[10px] overflow-hidden md:text-xs h-[62px]">
+                                {{ $file->content }}
+                            </p>
+                        </div>
                     </div>
-                </div>
                 @endforeach
 
             </div>
