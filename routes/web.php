@@ -289,5 +289,5 @@ Route::prefix('admin')->group(function () {
 
 
 // controller
-Route::get('/guest/TentangKami', [TentangkamiController::class, 'index']);
+Route::get('/guest/TentangKami', [TentangkamiController::class, 'selectTentangkami']);
 Route::get('/guest/Konsultasi', [KonsultasiController::class, 'index']);

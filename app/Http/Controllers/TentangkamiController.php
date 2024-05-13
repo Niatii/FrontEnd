@@ -7,12 +7,17 @@ use Illuminate\Http\Request;
 
 class TentangkamiController extends Controller
 {
-    public function index()
+    public function selectTentangkami()
     {
         // Ambil data file dari database
         $files = Tentangkami::all();
 
         // Tampilkan view dengan data file
         return view('guest/tentang_kami', compact('files'));
+    }
+
+    public function insertTentangkami()
+    {
+        $files = Tentangkami::all();
     }
 }
