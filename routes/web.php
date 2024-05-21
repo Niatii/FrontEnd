@@ -35,12 +35,8 @@ Route::prefix('user')->group(function () {
         return view('user/user_home');
     });
 
-    Route::get('/TentangKami', function () {
-        return view('user/tentang_kami');
-    });
-    Route::get('/Detail_TentangKami', function () {
-        return view('user/tentangkami_detail');
-    });
+    Route::get('/TentangKami', [TentangkamiController::class, 'selectUser']);
+    Route::get('/Detail_TentangKami', [TentangkamiController::class, 'show']);
 
     Route::get('/Riset', function () {
         return view('user/riset');
@@ -106,9 +102,7 @@ Route::prefix('user')->group(function () {
 
 Route::prefix('guest')->group(function () {
 
-    Route::get('/TentangKami', function () {
-        return view('guest/tentang_kami');
-    });
+    Route::get('/TentangKami', [TentangkamiController::class, 'selectGuest']);
     Route::get('/Detail_TentangKami', function () {
         return view('guest/tentangkami_detail');
     });
@@ -164,18 +158,15 @@ Route::prefix('admin')->group(function () {
     });
 
     Route::prefix('tentangkami')->group(function () {
-        Route::get('/', function () {
-            return view('admin/tentangkami/tentang_kami');
-        });
-        Route::get('/detail', function () {
-            return view('admin/tentangkami/detail');
-        });
+        Route::get('/', [TentangkamiController::class, 'selectAdmin'])->name('admin.tentangkami');
+        Route::get('/detail/{id}', [TentangkamiController::class, 'showAdmin'])->name('admin.tentangkami.detail');
         Route::get('/edit', function () {
             return view('admin/tentangkami/edit');
         });
         Route::get('/tambah', function () {
             return view('admin/tentangkami/tambah');
-        });
+        })->name('admin.tentangkami.form');
+        Route::post('/tambah', [TentangkamiController::class, 'insertTentangkami'])->name('admin.tentangkami.tambah');
     });
 
     Route::prefix('konsultasi')->group(function () {
@@ -289,5 +280,5 @@ Route::prefix('admin')->group(function () {
 
 
 // controller
-Route::get('/guest/TentangKami', [TentangkamiController::class, 'selectTentangkami']);
-Route::get('/guest/Konsultasi', [KonsultasiController::class, 'index']);
+// Route::get('/guest/TentangKami', [TentangkamiController::class, 'selectTentangkami']);
+// Route::get('/guest/Konsultasi', [KonsultasiController::class, 'index']);
