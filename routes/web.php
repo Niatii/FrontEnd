@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TentangkamiController;
 use App\Http\Controllers\KonsultasiController;
+use App\Http\Controllers\RisetController;
 use App\Models\Konsultasi;
 use App\Models\Riset;
 use App\Models\Tentangkami;
