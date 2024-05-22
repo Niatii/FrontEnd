@@ -30,7 +30,7 @@
    @include('components.headeradmin')
 
     <!-- Content Start -->
-    <section  class="pt-36 mx-8 sm:pt-40 flex justify-center relative">
+    <section  class="pt-36 mx-8 sm:pt-40 relative">
         <div class="bg-white w-full rounded-md pb-12">
             <div class="px-5 pt-20 md:px-20 w-full ">
                 <img class="object-cover w-8/12 rounded-md" src="{{ asset('storage/properti/2.jpg') }}" alt="detail tentang kami"
