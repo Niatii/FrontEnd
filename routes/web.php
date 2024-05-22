@@ -4,9 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TentangkamiController;
 use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\RisetController;
+use App\Http\Controllers\PublikasiController;
 use App\Models\Konsultasi;
 use App\Models\Riset;
 use App\Models\Tentangkami;
+use App\Models\Publikasi;
 
 
 
@@ -204,12 +206,8 @@ Route::prefix('admin')->group(function () {
     });
 
     Route::prefix('publikasi')->group(function () {
-        Route::get('/', function () {
-            return view('admin/publikasi/publikasi');
-        });
-        Route::get('/detail', function () {
-            return view('admin/publikasi/detail');
-        });
+        Route::get('/', [PublikasiController::class, 'selectAdmin'])->name('admin.publikasi');
+        Route::get('/detail/{id}', [PublikasiController::class, 'showAdmin'])->name('admin.publikasi.detail');
         Route::get('/edit', function () {
             return view('admin/publikasi/edit');
         });
