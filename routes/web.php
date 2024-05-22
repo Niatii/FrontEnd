@@ -174,12 +174,8 @@ Route::prefix('admin')->group(function () {
     });
 
     Route::prefix('konsultasi')->group(function () {
-        Route::get('/', function () {
-            return view('admin/konsultasi/konsultasi');
-        });
-        Route::get('/detail', function () {
-            return view('admin/konsultasi/detail');
-        });
+        Route::get('/', [KonsultasiController::class, 'selectAdmin'])->name('admin.konsultasi');
+        Route::get('/detail/{id}', [KonsultasiController::class, 'showAdmin'])->name('admin.konsultasi.detail');;
         Route::get('/edit', function () {
             return view('admin/konsultasi/edit');
         });
