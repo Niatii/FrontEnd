@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Riset extends Model
 {
     use HasFactory;
+
+    // Nama tabel yang akan digunakan oleh model
+    protected $table = 'riset';
+    protected $primarykey = 'riset_id';
+
+    public $timestamps = false;
+
+    // Kolom-kolom yang dapat diisi secara massal (fillable)
+    // protected $fillable = [
+        // 'title',
+        //'content',
+        // 'photo',
+        // // tambahkan kolom lainnya di sini sesuai kebutuhan anda
+        //  ];
 }
