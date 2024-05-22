@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TentangkamiController;
 use App\Http\Controllers\KonsultasiController;
+use App\Http\Controllers\RisetController;
 use App\Models\Konsultasi;
+use App\Models\Riset;
 use App\Models\Tentangkami;
 
 
@@ -191,12 +193,8 @@ Route::prefix('admin')->group(function () {
     });
 
     Route::prefix('riset')->group(function () {
-        Route::get('/', function () {
-            return view('admin/riset/riset');
-        });
-        Route::get('/detail', function () {
-            return view('admin/riset/detail');
-        });
+        Route::get('/', [RisetController::class, 'selectAdmin'])->name('admin.riset');
+        Route::get('/detail/{id}', [RisetController::class, 'showAdmin'])->name('admin.riset.detail');
         Route::get('/edit', function () {
             return view('admin/riset/edit');
         });
