@@ -17,7 +17,7 @@ class KonsultasiController extends Controller
 
     public function showAdmin($id)
     {
-        $files = Konsultasi::all($id);
+        $files = Konsultasi::find($id);
 
        return view('admin.konsultasi.detail', compact('files'));
     }
@@ -50,11 +50,25 @@ class KonsultasiController extends Controller
         return view('guest.konsultasi', compact('files'));
     }
 
+    public function showGuest($id)
+    {
+        $files = Konsultasi::find($id);
+
+       return view('guest.detail_konsultasi', compact('files'));
+    }
+
     // user
     public function selectUser()
     {
         $files = Konsultasi::all();
 
         return view('user.konsultasi', compact('files'));
+    }
+
+    public function showUser($id)
+    {
+        $files = Konsultasi::find($id);
+
+       return view('user.detail_konsultasi', compact('files'));
     }
 }

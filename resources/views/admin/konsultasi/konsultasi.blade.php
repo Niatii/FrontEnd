@@ -30,7 +30,7 @@
    @include('components.headeradmin')
 
     <!-- Content Start -->
-    <section  class="pt-36 sm:pt-40 mb-12 mx-8 flex justify-center">
+    <section  class="pt-36 sm:pt-40 mb-12 mx-8">
         @if (session('success'))
         <div class="bg-blue-400 text-white p-4 rounded mb-8" style=" margin-bottom: 1rem;">
             {{ session('success') }}
@@ -81,7 +81,7 @@
                 </a>
             </div>
             <div class="flex justify-end mb-20">
-                <a href="/admin/konsultasi/pertanyaan" class="bg-latar py-1 pl-4 pr-8 font-bold text-nav text-xs sm:text-base
+                <a href="/admin/konsultasi/pertanyaan" class="bg-latar py-1 mb-14 pl-4 pr-8 font-bold text-nav text-xs sm:text-base
                     hover:text-black focus:text-white transition duration-1000">
                     Lihat list pertanyaan..
                 </a>

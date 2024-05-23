@@ -49,12 +49,8 @@ Route::prefix('user')->group(function () {
         return view('user/riset_detail');
     });
 
-    Route::get('/Konsultasi', function () {
-        return view('user/konsultasi');
-    });
-    Route::get('/Detail_Konsultasi', function () {
-        return view('user/konsultasi_detail');
-    });
+    Route::get('/Konsultasi', [KonsultasiController::class, 'selectUser'])->name('user.konsultasi');
+    Route::get('/Detail_Konsultasi/{id}', [KonsultasiController::class, 'ShowUser'])->name('user.konsultasi.detail');
 
     Route::get('/Publikasi', function () {
         return view('user/publikasi');
@@ -118,12 +114,8 @@ Route::prefix('guest')->group(function () {
         return view('guest/riset_detail');
     });
 
-    Route::get('/Konsultasi', function () {
-        return view('guest/konsultasi');
-    });
-    Route::get('/Detail_Konsultasi', function () {
-        return view('guest/konsultasi_detail');
-    });
+    Route::get('/Konsultasi', [KonsultasiController::class, 'selectGuest'])->name('guest.konsultasi');
+    Route::get('/Detail_Konsultasi/{id}', [KonsultasiController::class, 'ShowGuest'])->name('guest.konsultasi.detail');
 
     Route::get('/Publikasi', function () {
         return view('guest/publikasi');
@@ -175,7 +167,7 @@ Route::prefix('admin')->group(function () {
 
     Route::prefix('konsultasi')->group(function () {
         Route::get('/', [KonsultasiController::class, 'selectAdmin'])->name('admin.konsultasi');
-        Route::get('/detail/{id}', [KonsultasiController::class, 'showAdmin'])->name('admin.konsultasi.detail');;
+        Route::get('/detail/{id}', [KonsultasiController::class, 'showAdmin'])->name('admin.konsultasi.detail');
         Route::get('/edit', function () {
             return view('admin/konsultasi/edit');
         });
