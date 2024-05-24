@@ -5,10 +5,12 @@ use App\Http\Controllers\TentangkamiController;
 use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\RisetController;
 use App\Http\Controllers\PublikasiController;
+use App\Http\Controllers\PertanyaanController;
 use App\Models\Konsultasi;
 use App\Models\Riset;
 use App\Models\Tentangkami;
 use App\Models\Publikasi;
+use App\Models\Pertanyaan;
 
 
 
@@ -51,6 +53,7 @@ Route::prefix('user')->group(function () {
 
     Route::get('/Konsultasi', [KonsultasiController::class, 'selectUser'])->name('user.konsultasi');
     Route::get('/Konsultasi/Detail/{id}', [KonsultasiController::class, 'ShowUser'])->name('user.konsultasi.detail');
+    Route::post('/Konsultasi/Detail', [PertanyaanController::class, 'insertPertanyaanUser'])->name('user.pertanyaan.tambah');
 
     Route::get('/Publikasi', function () {
         return view('user/publikasi');
@@ -114,6 +117,8 @@ Route::prefix('guest')->group(function () {
 
     Route::get('/Konsultasi', [KonsultasiController::class, 'selectGuest'])->name('guest.konsultasi');
     Route::get('/Konsultasi/Detail/{id}', [KonsultasiController::class, 'ShowGuest'])->name('guest.konsultasi.detail');
+    Route::post('/Konsultasi/Detail', [PertanyaanController::class, 'insertPertanyaanGuest'])->name('guest.pertanyaan.tambah');
+
 
     Route::get('/Publikasi', function () {
         return view('guest/publikasi');
@@ -174,12 +179,8 @@ Route::prefix('admin')->group(function () {
         Route::post('/update/{id}', [KonsultasiController::class, 'update'])->name('admin.konsultasi.update');
         Route::post('/delete/{id}', [KonsultasiController::class, 'delete'])->name('admin.konsultasi.delete');
 
-        Route::get('/pertanyaan', function () {
-            return view('admin/konsultasi/pertanyaan');
-        });
-        Route::get('/detail_pertanyaan', function () {
-            return view('admin/konsultasi/detail_pertanyaan');
-        });
+        Route::get('/pertanyaan', [PertanyaanController::class, 'selectAdmin'])->name('admin.konsultasi.pertanyaan');
+        Route::get('/detail_pertanyaan/{id}', [PertanyaanController::class, 'showAdmin'])->name('admin.konsultasi.detail');
     });
 
     Route::prefix('riset')->group(function () {

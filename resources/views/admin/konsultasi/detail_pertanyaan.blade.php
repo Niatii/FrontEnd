@@ -39,13 +39,14 @@
                 data-aos-offset="0">
                 Detail Pertanyaan
             </h1> 
-            
+
+
             <div class="text-xs md:text-base mx-5 md:mx-10 my-3 flex">
                 <p class="font-bold text-wjudul">
                     Nama :
                 </p>
                 <p class="ml-2">
-                    Nama Pengguna
+                    {{ $files->name }}
                 </p>
             </div>
             <div class="text-xs md:text-base mx-5 md:mx-10 my-3 flex">
@@ -53,7 +54,7 @@
                     Email :
                 </p>
                 <p class="ml-2">
-                    Email Pengguna
+                    {{ $files->email }}
                 </p>
             </div>
             <div class="text-xs md:text-base mx-5 md:mx-10 my-3">
@@ -61,9 +62,10 @@
                     Pertanyaan :
                 </p>
                 <p class="my-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic doloremque sequi quis accusamus placeat corporis aliquid beatae, porro pariatur minus fuga iure quisquam eum! Ducimus corporis est at sit, earum ipsa totam, aut sed quidem voluptatibus amet reiciendis inventore cumque doloremque pariatur recusandae quae voluptate et enim sint maxime distinctio. Aspernatur, necessitatibus nulla. Quae nesciunt itaque assumenda, iusto ipsam dicta reiciendis voluptatibus architecto eius amet sed voluptas delectus quo. Explicabo quos laudantium sed, reiciendis, quidem maxime porro dolores eligendi inventore hic quasi. Molestias aspernatur officia voluptatibus odio quos, amet natus modi enim, iusto nisi facere, ducimus sequi ea totam? Ducimus.
+                    {{ $files->pertanyaan }}
                 </p>
             </div>
+
 
             <div class="mt-20">
                 <a href="/admin/konsultasi" class="bg-latar py-1 pr-4 pl-8 font-bold text-nav text-xs sm:text-base

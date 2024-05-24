@@ -55,15 +55,16 @@
                     <section class="bg-wform1 rounded-xl mt-20 " data-aos="fade-zoom-in">
                         <div class="py-6 lg:py-8">
                             <h2 class="mb-4 lg:text-2xl px-4">Formulir Pertanyaan</h2>
-                            <form action="#" class=" p-4 bg-white">
+                            <form action="{{route('guest.pertanyaan.tambah')}}" method="POST" class=" p-4 bg-white">
+                                @csrf
                                 <div>
-                                    <input type="text" id="name" class="bg-wform text-sm border-none focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 my-4 " placeholder="Nama" required>
+                                    <input type="text" name="name" id="name" class="bg-wform text-sm border-none focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 my-4 " placeholder="Nama" required>
                                 </div>
                                 <div>
-                                    <input type="email" id="email" class="bg-wform text-sm border-none focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 my-4"   placeholder="Email" required>
+                                    <input type="email" name="email" id="email" class="bg-wform text-sm border-none focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 my-4"   placeholder="Email" required>
                                 </div>
                                 <div class="sm:col-span-2">
-                                    <textarea id="message" rows="6" class="block p-2.5 w-full bg-wform text-sm border-none focus:ring-primary-500 focus:border-primary-500 my-4 " placeholder="Pertanyaan..."></textarea>
+                                    <textarea name="pertanyaan" id="message" rows="6" class="block p-2.5 w-full bg-wform text-sm border-none focus:ring-primary-500 focus:border-primary-500 my-4 " placeholder="Pertanyaan..."></textarea>
                                 </div>
 
                                 <div class="flex justify-center items-center mt-3">
