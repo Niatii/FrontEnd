@@ -163,12 +163,11 @@ Route::prefix('admin')->group(function () {
     Route::prefix('konsultasi')->group(function () {
         Route::get('/', [KonsultasiController::class, 'selectAdmin'])->name('admin.konsultasi');
         Route::get('/detail/{id}', [KonsultasiController::class, 'showAdmin'])->name('admin.konsultasi.detail');
-        Route::get('/edit', function () {
-            return view('admin/konsultasi/edit');
-        });
-        Route::get('/tambah', function () {
-            return view('admin/konsultasi/tambah');
-        });
+        Route::get('/edit/{id}', [KonsultasiController::class, 'edit'])->name('admin.konsultasi.edit');
+        Route::post('/tambah', [KonsultasiController::class, 'insertKonsultasi'])->name('admin.konsultasi.tambah');
+        Route::post('/update/{id}', [KonsultasiController::class, 'update'])->name('admin.konsultasi.update');
+        Route::post('/delete/{id}', [KonsultasiController::class, 'delete'])->name('admin.konsultasi.delete');
+        
         Route::get('/pertanyaan', function () {
             return view('admin/konsultasi/pertanyaan');
         });

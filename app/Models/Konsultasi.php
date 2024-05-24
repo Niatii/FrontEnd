@@ -15,10 +15,9 @@ class Konsultasi extends Model
     public $timestamps = false;
 
     // Kolom-kolom yang dapat diisi secara massal (fillable)
-    // protected $fillable = [
-    //     'title',
-    //     'content',
-    //     'photo',
-    //     tambahkan kolom lainnya di sini sesuai kebutuhan Anda
-    // ];
+    protected $fillable = [
+        'title',
+        'content',
+        'photo',
+    ];
 }

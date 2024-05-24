@@ -30,14 +30,14 @@
    @include('components.headeradmin')
 
     <!-- Content Start -->
-    <section  class="pt-36 mx-8 sm:pt-40 flex justify-center relative">
+    <section  class="pt-36 mx-8 sm:pt-40 relative">
         <div class="bg-white w-full rounded-md pb-12">
-            <div class="flex mt-6 gap-x-4 justify-end mx-5 md:px-20">
-                <button class="text-xs bg-gradb text-white py-1 px-3 rounded-md md:text-base hover:bg-latar focus:bg-latar
+            <div class="flex pt-6 mt-6 gap-x-4 justify-end mx-5 md:px-20">
+                <button onclick="showDialog()" class="text-xs bg-gradb text-white py-1 px-3 rounded-md md:text-base hover:bg-latar focus:bg-latar
                     hover:text-black focus:text-black transition duration-700">
                     Hapus
                 </button>
-                <a href="/admin/konsultasi/edit" class="text-xs bg-nav text-white py-1 px-4 rounded-md md:text-base hover:bg-latar focus:bg-latar
+                <a href="{{ route('admin.konsultasi.edit', $files->konsultasi_id) }}" class="text-xs bg-nav text-white py-1 px-4 rounded-md md:text-base hover:bg-latar focus:bg-latar
                     hover:text-black focus:text-black transition duration-700">
                     Edit
                 </a>
@@ -66,6 +66,9 @@
             </div>
     </section>
     <!-- Content End -->
+
+    <!-- modal -->
+    @include('modals.modal-hapus_konsultasi')
     
 
     <!-- javascript -->

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Konsultasi;
 use Illuminate\Http\Request;
+use illuminate\Support\Facades\File;
 
 class KonsultasiController extends Controller
 {
@@ -41,6 +42,63 @@ class KonsultasiController extends Controller
 
         return redirect()->route('admin.konsultasi')->with('success', 'Data Berhasil Disimpan!');
     }
+
+    public function edit($id)
+    {
+        // get post by ID
+        $post = Konsultasi::findOrFail($id);
+
+        // render view with post
+        return view('admin.konsultasi.edit', compact('post'));
+    }
+
+    public function update(request $request, $id)
+    {
+        //validate form
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        //get post by ID
+        $post = Konsultasi::findOrFail($id);
+
+        //check if image is uploaded
+        if ($request->hasFile('photo')) {
+            // Get the uploaded file
+            $image = $request->file('photo');
+            // Generate a new name for the file
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            // Store the new image in public/images
+            $image->move(public_path('images'), $imageName);
+
+            // Delete old image if it exists
+            if ($post->photo) {
+                $oldImagePath = public_path('images/' . $post->photo);
+                if (File::exists($oldImagePath)) {
+                    File::delete($oldImagePath);
+                }
+            }
+
+            //update post with new image
+            $post->update([
+                'photo' => $imageName,
+                'title' => $request->title,
+                'content' => $request->content,
+            ]);
+        } else {
+            //update post without new image
+            $post->update([
+                'title' => $request->title,
+                'content' => $request->content,
+            ]);
+        }
+
+        //redirect to index
+        return redirect()->route('admin.konsultasi.detail', $id)->with(['success' => 'Data Berhasil Diubah!']);
+    }
+
 
     // guest
     public function selectGuest()

@@ -75,8 +75,7 @@
             
             </div>
             <div class="mx-5 mt-5 mb-20 sm:mx-10">
-                <a href="/admin/konsultasi/tambah" class="text-xs sm:text-base bg-nav py-1 px-3 rounded-md text-white hover:bg-gradb focus:bg-gradb
-                    transition duration-700">
+                <a href="{{route('admin.konsultasi.tambah')}}" class="text-xs sm:text-base bg-nav py-1 px-3 rounded-md text-white hover:bg-gradb focus:bg-gradb transition duration-700">
                     Tambah
                 </a>
             </div>

@@ -39,22 +39,23 @@
                 data-aos-delay="150"
                 data-aos-offset="0">
                 <div class="flex flex-col justify-between py-4 leading-normal">
-                    <form action="">
+                    <form method="POST" action=" {{route('admin.konsultasi.tambah')}} " enctype="multipart/form-data">
+                        @csrf
                         <div>
                             <input class="block w-full mb-5 text-xs text-gray-900 border border-black rounded-lg cursor-pointer focus:outline-none" id="small_size" type="file">
                         </div>
                         <div >
-                            <input type="text" class="w-full border-black rounded-lg" placeholder="Edit Judul..">
+                            <input type="text" class="w-full border-black rounded-lg" placeholder="Tambah Judul..">
                         </div>
                         <div class="border border-black my-5 rounded-lg">
-                        <textarea id="informasi" rows="15" class="block w-full  text-sm border-none focus:ring-primary-500 focus:border-primary-500 overflow-y-scroll" placeholder="Edit Informasi..."></textarea>
+                        <textarea id="informasi" rows="15" class="block w-full  text-sm border-none focus:ring-primary-500 focus:border-primary-500 overflow-y-scroll" placeholder="Tambah Informasi..."></textarea>
                         </div>
 
                         <div class="flex justify-end">
-                            <a href="/admin/konsultasi" type="submit" class="bg-nav hover:bg-gradb text-xs md:text-base text-white py-2 px-4 md:px-8
+                            <button href="/admin/konsultasi" type="submit" class="bg-nav hover:bg-gradb text-xs md:text-base text-white py-2 px-4 md:px-8
                                 rounded-md">
                                 Tambah
-                            </a>
+                            </button>
                         </div>
                     </form>
                 </div>
