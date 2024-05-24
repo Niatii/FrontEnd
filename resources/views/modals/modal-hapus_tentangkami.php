@@ -22,7 +22,7 @@
 
 <!-- javascript -->
 <script>
-    function showDialog(){
+    function showDialog() {
         let dialog = document.getElementById('dialog');
         dialog.classList.remove('hidden');
         dialog.classList.add('flex');
@@ -31,6 +31,7 @@
             dialog.classList.add('opacity-100');
         }, 20);
     }
+
     function hideDialog() {
         let dialog = document.getElementById('dialog');
         dialog.classList.add('opacity-0');
@@ -39,7 +40,8 @@
             dialog.classList.remove('flex');
         }, 500);
     }
-    function ShowContent() {   
+
+    function ShowContent() {
         window.location.href = "/admin/tentangkami";
     }
 </script>

@@ -39,8 +39,8 @@ Route::prefix('user')->group(function () {
         return view('user/user_home');
     });
 
-    Route::get('/TentangKami', [TentangkamiController::class, 'selectUser']);
-    Route::get('/Detail_TentangKami', [TentangkamiController::class, 'show']);
+    Route::get('/TentangKami', [TentangkamiController::class, 'selectUser'])->name('user.tentangkami');;
+    Route::get('/TentangKami/Detail', [TentangkamiController::class, 'show'])->name('user.tentangkami.detail');;
 
     Route::get('/Riset', function () {
         return view('user/riset');
@@ -50,7 +50,7 @@ Route::prefix('user')->group(function () {
     });
 
     Route::get('/Konsultasi', [KonsultasiController::class, 'selectUser'])->name('user.konsultasi');
-    Route::get('/Detail_Konsultasi/{id}', [KonsultasiController::class, 'ShowUser'])->name('user.konsultasi.detail');
+    Route::get('/Konsultasi/Detail/{id}', [KonsultasiController::class, 'ShowUser'])->name('user.konsultasi.detail');
 
     Route::get('/Publikasi', function () {
         return view('user/publikasi');
@@ -102,10 +102,8 @@ Route::prefix('user')->group(function () {
 
 Route::prefix('guest')->group(function () {
 
-    Route::get('/TentangKami', [TentangkamiController::class, 'selectGuest']);
-    Route::get('/Detail_TentangKami', function () {
-        return view('guest/tentangkami_detail');
-    });
+    Route::get('/TentangKami', [TentangkamiController::class, 'selectGuest'])->name('guest.tentangkami');
+    Route::get('/TentangKami/Detail/{id}', [TentangkamiController::class, 'selectGuest'])->name('guest.tentangkami.detail');
 
     Route::get('/Riset', function () {
         return view('guest/riset');
@@ -115,7 +113,7 @@ Route::prefix('guest')->group(function () {
     });
 
     Route::get('/Konsultasi', [KonsultasiController::class, 'selectGuest'])->name('guest.konsultasi');
-    Route::get('/Detail_Konsultasi/{id}', [KonsultasiController::class, 'ShowGuest'])->name('guest.konsultasi.detail');
+    Route::get('/Konsultasi/Detail/{id}', [KonsultasiController::class, 'ShowGuest'])->name('guest.konsultasi.detail');
 
     Route::get('/Publikasi', function () {
         return view('guest/publikasi');
@@ -156,13 +154,10 @@ Route::prefix('admin')->group(function () {
     Route::prefix('tentangkami')->group(function () {
         Route::get('/', [TentangkamiController::class, 'selectAdmin'])->name('admin.tentangkami');
         Route::get('/detail/{id}', [TentangkamiController::class, 'showAdmin'])->name('admin.tentangkami.detail');
-        Route::get('/edit', function () {
-            return view('admin/tentangkami/edit');
-        });
-        Route::get('/tambah', function () {
-            return view('admin/tentangkami/tambah');
-        })->name('admin.tentangkami.form');
         Route::post('/tambah', [TentangkamiController::class, 'insertTentangkami'])->name('admin.tentangkami.tambah');
+        Route::get('/edit/{id}', [TentangkamiController::class, 'edit'])->name('admin.tentangkami.edit');
+        Route::post('/update/{id}', [TentangkamiController::class, 'update'])->name('admin.tentangkami.update');
+        Route::post('/delete/{id}', [TentangkamiController::class, 'delete'])->name('admin.tentangkami.delete');
     });
 
     Route::prefix('konsultasi')->group(function () {

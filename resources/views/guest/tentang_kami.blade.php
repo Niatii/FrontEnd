@@ -40,8 +40,8 @@
                 <div class="w-full grid grid-cols-3">
                     <div class="flex items-center">
                         <!-- Tampilkan gambar atau tautan ke file -->
-                        <a href="/guest/Detail_TentangKami">
-                            <img class="w-full hover:brightness-50" src="{{ asset('storage/properti/2.jpg') }}" alt="{{ $file->photo }}" />
+                        <a href="{{ route('guest.tentangkami.detail', $file->tentang_id) }}">
+                            <img class="w-full hover:brightness-50" src="{{ asset('images/'.$file->photo) }}" alt="{{ $file->photo }}" />
                         </a>
                     </div>
                     <div class="mx-2 h-20 sm:px-2 sm:h-28 md:h-44 sm:pt-3 md:pt-5 overflow-hidden col-span-2 ">
@@ -52,7 +52,7 @@
                             {{ $file->content }}
                         </p>
                         <hr class="border-t-1 border-black mt-1">
-                        <a href="/guest/Detail_TentangKami" class="text-[8px] md:text-xs lg:text-base hover:text-sky-600">
+                        <a href="{{ route('guest.tentangkami.detail', $file->tentang_id) }}" class="text-[8px] md:text-xs lg:text-base hover:text-sky-600">
                             selengkapnya...
                         </a>
                     </div>

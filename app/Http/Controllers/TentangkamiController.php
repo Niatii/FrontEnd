@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tentangkami;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class TentangkamiController extends Controller
 {
@@ -27,7 +28,7 @@ class TentangkamiController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'photo' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
         $imageName = time() . '.' . $request->photo->extension();
@@ -42,13 +43,78 @@ class TentangkamiController extends Controller
         return redirect()->route('admin.tentangkami')->with('success', 'Data Berhasil Disimpan!');
     }
 
+    public function edit($id)
+    {
+        //get post by ID
+        $post = Tentangkami::findOrFail($id);
+
+        //render view with post
+        return view('admin.tentangkami.edit', compact('post'));
+    }
+
+    public function update(request $request, $id)
+    {
+        //validate form
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        //get post by ID
+        $post = Tentangkami::findOrFail($id);
+
+        //check if image is uploaded
+        if ($request->hasFile('photo')) {
+            // Get the uploaded file
+            $image = $request->file('photo');
+            // Generate a new name for the file
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            // Store the new image in public/images
+            $image->move(public_path('images'), $imageName);
+
+            // Delete old image if it exists
+            if ($post->photo) {
+                $oldImagePath = public_path('images/' . $post->photo);
+                if (File::exists($oldImagePath)) {
+                    File::delete($oldImagePath);
+                }
+            }
+
+            //update post with new image
+            $post->update([
+                'photo' => $imageName,
+                'title' => $request->title,
+                'content' => $request->content,
+            ]);
+        } else {
+            //update post without new image
+            $post->update([
+                'title' => $request->title,
+                'content' => $request->content,
+            ]);
+        }
+
+        //redirect to index
+        return redirect()->route('admin.tentangkami.detail', $id)->with(['success' => 'Data Berhasil Diubah!']);
+    }
+
+
     // guest
     public function selectGuest()
     {
         $files = Tentangkami::all();
 
-        return view('guest.tentangkami', compact('files'));
+        return view('guest.tentang_kami', compact('files'));
     }
+
+    public function showGuest($id)
+    {
+        $files = Tentangkami::find($id);
+
+        return view('guest.tentangkami_detail', compact('files'));
+    }
+
 
     // user
     public function selectUser()
@@ -56,5 +122,12 @@ class TentangkamiController extends Controller
         $files = Tentangkami::all();
 
         return view('user.tentang_kami', compact('files'));
+    }
+
+    public function showUser($id)
+    {
+        $files = Tentangkami::find($id);
+
+        return view('user.tentangkami_detail', compact('files'));
     }
 }

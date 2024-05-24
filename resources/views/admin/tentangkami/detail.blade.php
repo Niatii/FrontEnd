@@ -38,9 +38,9 @@
         <div class="bg-white w-full rounded-md mb-12 pb-12">
 
             <div class="flex mt-6 gap-x-4 justify-end mx-5 md:px-20">
-                <button class="text-xs bg-gradb text-white py-1 px-3 rounded-md md:text-base hover:bg-latar focus:bg-latar
+                <button onclick="showDialog()" class="text-xs bg-gradb text-white py-1 px-3 rounded-md md:text-base hover:bg-latar focus:bg-latar
                 hover:text-black focus:text-black transition duration-700">Hapus</button>
-                <a href="/admin/tentangkami/edit" class="text-xs bg-nav text-white py-1 px-4 rounded-md md:text-base hover:bg-latar focus:bg-latar
+                <a href="{{ route('admin.tentangkami.edit', $files->tentang_id) }}" class="text-xs bg-nav text-white py-1 px-4 rounded-md md:text-base hover:bg-latar focus:bg-latar
                 hover:text-black focus:text-black transition duration-700">Edit</a>
 
             </div>
@@ -57,6 +57,9 @@
         </div>
     </section>
     <!-- Content End -->
+
+    <!-- modal -->
+    @include('modals.modal-hapus_tentangkami')
 
     <!-- javascript -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

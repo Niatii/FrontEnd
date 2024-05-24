@@ -10,16 +10,16 @@ class KonsultasiController extends Controller
     // admin
     public function selectAdmin()
     {
-       $files = Konsultasi::all();
+        $files = Konsultasi::all();
 
-       return view('admin.konsultasi.konsultasi', compact('files'));
+        return view('admin.konsultasi.konsultasi', compact('files'));
     }
 
     public function showAdmin($id)
     {
         $files = Konsultasi::find($id);
 
-       return view('admin.konsultasi.detail', compact('files'));
+        return view('admin.konsultasi.detail', compact('files'));
     }
 
     public function insertKonsultasi(request $request)
@@ -54,7 +54,7 @@ class KonsultasiController extends Controller
     {
         $files = Konsultasi::find($id);
 
-       return view('guest.detail_konsultasi', compact('files'));
+        return view('guest.konsultasi_detail', compact('files'));
     }
 
     // user
@@ -69,6 +69,6 @@ class KonsultasiController extends Controller
     {
         $files = Konsultasi::find($id);
 
-       return view('user.detail_konsultasi', compact('files'));
+        return view('user.konsultasi_detail', compact('files'));
     }
 }
