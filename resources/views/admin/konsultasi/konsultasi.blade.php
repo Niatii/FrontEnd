@@ -57,7 +57,7 @@
                 <div class="w-full" data-aos="fade-up"
                 data-aos-anchor-placement="center-bottom">
                     <a href="{{ route('admin.konsultasi.detail', $file->konsultasi_id) }}">
-                        <img src="{{ asset('images/'.$file->photo) }}" alt="konsultasi" class="w-full hover:brightness-50"/>
+                        <img src="{{ asset('images/'.$file->photo) }}" alt="konsultasi" class="w-full aspect-16/9 hover:brightness-50"/>
                     </a>
                     <div class="py-3">
                         <a href="{{ route('admin.konsultasi.detail', $file->konsultasi_id) }}">

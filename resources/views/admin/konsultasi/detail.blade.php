@@ -43,7 +43,7 @@
                 </a>
             </div>
             <div class="px-5 pt-5 md:px-20 w-full ">
-                <img class="object-cover w-full rounded-md" src="{{ asset('images/'.$files->photo) }}" alt="detail tentang kami"
+                <img class="object-cover aspect-16/9 w-full rounded-md" src="{{ asset('images/'.$files->photo) }}" alt="detail tentang kami"
                 data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
                 data-aos-delay="150"
