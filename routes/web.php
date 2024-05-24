@@ -154,6 +154,9 @@ Route::prefix('admin')->group(function () {
     Route::prefix('tentangkami')->group(function () {
         Route::get('/', [TentangkamiController::class, 'selectAdmin'])->name('admin.tentangkami');
         Route::get('/detail/{id}', [TentangkamiController::class, 'showAdmin'])->name('admin.tentangkami.detail');
+        Route::get('/tambah', function () {
+            return view('admin/berita/tambah');
+        });
         Route::post('/tambah', [TentangkamiController::class, 'insertTentangkami'])->name('admin.tentangkami.tambah');
         Route::get('/edit/{id}', [TentangkamiController::class, 'edit'])->name('admin.tentangkami.edit');
         Route::post('/update/{id}', [TentangkamiController::class, 'update'])->name('admin.tentangkami.update');
@@ -167,7 +170,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/tambah', [KonsultasiController::class, 'insertKonsultasi'])->name('admin.konsultasi.tambah');
         Route::post('/update/{id}', [KonsultasiController::class, 'update'])->name('admin.konsultasi.update');
         Route::post('/delete/{id}', [KonsultasiController::class, 'delete'])->name('admin.konsultasi.delete');
-        
+
         Route::get('/pertanyaan', function () {
             return view('admin/konsultasi/pertanyaan');
         });
