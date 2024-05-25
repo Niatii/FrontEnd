@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Riset;
 use Illuminate\Http\Request;
-use illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\File;
 
 class RisetController extends Controller
 {

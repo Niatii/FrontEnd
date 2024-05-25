@@ -41,15 +41,11 @@ Route::prefix('user')->group(function () {
         return view('user/user_home');
     });
 
-    Route::get('/TentangKami', [TentangkamiController::class, 'selectUser'])->name('user.tentangkami');;
-    Route::get('/TentangKami/Detail/{id}', [TentangkamiController::class, 'showUser'])->name('user.tentangkami.detail');;
+    Route::get('/TentangKami', [TentangkamiController::class, 'selectUser'])->name('user.tentangkami');
+    Route::get('/TentangKami/Detail/{id}', [TentangkamiController::class, 'showUser'])->name('user.tentangkami.detail');
 
-    Route::get('/Riset', function () {
-        return view('user/riset');
-    });
-    Route::get('/Detail_Riset', function () {
-        return view('user/riset_detail');
-    });
+    Route::get('/Riset', [RisetController::class, 'selectUser'])->name('user.riset');
+    Route::get('/Detail_Riset/{id}', [RisetController::class, 'ShowUser'])->name('user.riset.detail');
 
     Route::get('/Konsultasi', [KonsultasiController::class, 'selectUser'])->name('user.konsultasi');
     Route::get('/Konsultasi/Detail/{id}', [KonsultasiController::class, 'ShowUser'])->name('user.konsultasi.detail');
@@ -104,12 +100,9 @@ Route::prefix('guest')->group(function () {
     Route::get('/TentangKami', [TentangkamiController::class, 'selectGuest'])->name('guest.tentangkami');
     Route::get('/TentangKami/Detail/{id}', [TentangkamiController::class, 'showGuest'])->name('guest.tentangkami.detail');
 
-    Route::get('/Riset', function () {
-        return view('guest/riset');
-    });
-    Route::get('/Detail_Riset', function () {
-        return view('guest/riset_detail');
-    });
+    Route::get('/Riset', [RisetController::class, 'selectGuest'])->name('guest.riset');
+    Route::get('/Detail_Riset/{id}', [RisetController::class, 'ShowGuest'])->name('guest.riset.detail');
+    
 
     Route::get('/Konsultasi', [KonsultasiController::class, 'selectGuest'])->name('guest.konsultasi');
     Route::get('/Konsultasi/Detail/{id}', [KonsultasiController::class, 'ShowGuest'])->name('guest.konsultasi.detail');

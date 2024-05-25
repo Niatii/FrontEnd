@@ -32,7 +32,7 @@
     <section  class="pt-36 sm:pt-40 mb-12 mx-8">
         <div class="bg-white w-full">
             <div class="p-5 md:p-20 w-full">
-                <img class="object-cover w-full rounded-md" src="{{ asset('storage/properti/2.jpg') }}" alt="detail publikasi"
+                <img class="object-cover w-full rounded-md" src="{{ asset('images/'.$files->photo) }}" alt="detail publikasi"
                 data-aos="fade-zoom-in"
                 data-aos-easing="ease-in-back"
                 data-aos-delay="150"
