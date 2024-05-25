@@ -43,8 +43,14 @@
         <div class="bg-white w-full rounded-md mb-12 pb-12">
 
             <div class="flex pt-6 mt-6 gap-x-4 justify-end mx-5 md:px-20">
-                <button onclick="showDialog()" class="text-xs bg-gradb text-white py-1 px-3 rounded-md md:text-base hover:bg-latar focus:bg-latar
-                hover:text-black focus:text-black transition duration-700">Hapus</button>
+                <form action="{{ route('admin.tentangkami.delete', $files->tentang_id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" onclick="return confirm('Apakah benar ingin menghapus {{$files->title}}')" class="text-xs bg-gradb text-white py-1 px-3 rounded-md md:text-base hover:bg-latar focus:bg-latar
+                    hover:text-black focus:text-black transition duration-700">
+                        Hapus
+                    </button>
+                </form>
                 <a href="{{ route('admin.tentangkami.edit', $files->tentang_id) }}" class="text-xs bg-nav text-white py-1 px-4 rounded-md md:text-base hover:bg-latar focus:bg-latar
                 hover:text-black focus:text-black transition duration-700">Edit</a>
 

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Konsultasi;
 use Illuminate\Http\Request;
-use illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\File;
 
 class KonsultasiController extends Controller
 {
@@ -98,6 +98,32 @@ class KonsultasiController extends Controller
         //redirect to index
         return redirect()->route('admin.konsultasi.detail', $id)->with(['success' => 'Data Berhasil Diubah!']);
     }
+
+    public function delete($id)
+    {
+        // Cari data berdasarkan ID
+        $files = Konsultasi::where('konsultasi_id', $id)->first();
+
+        if (!$files) {
+            // Jika data tidak ditemukan, redirect dengan pesan error
+            return redirect()->route('admin.konsultasi')->with(['error' => 'Data tidak ditemukan']);
+        }
+
+        // Hapus file gambar dari folder public/images jika ada
+        if ($files->photo) {
+            $oldImagePath = public_path('images/' . $files->photo);
+            if (File::exists($oldImagePath)) {
+                File::delete($oldImagePath);
+            }
+        }
+
+        // Hapus data dari database
+        $files->delete();
+
+        // Redirect ke halaman yang sesuai dengan pesan sukses
+        return redirect()->route('admin.konsultasi')->with(['success' => 'Data berhasil dihapus']);
+    }
+
 
 
     // guest

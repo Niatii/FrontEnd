@@ -39,9 +39,9 @@
             </h1>
 
             <div class=" relative overflow-x-auto mx-5 sm:mx-10">
-                
+
                 <table class="w-full text-xs sm:text-base text-left border-collapse border border-slate-500 ">
-                    
+
                     <thead class="text-xs text-center sm:text-base">
                         <tr>
                             <th scope="col" class="px-2 py-3 border border-slate-500">
@@ -65,15 +65,15 @@
                                 {{ $file->email }}
                             </td>
                             <td class="px-2 py-4 border border-slate-500 text-center">
-                                <a href="{{ route('admin.konsultasi.detail', $file->pertanyaan_id) }}" class=" text-white p-2 sm:px-4 rounded-md bg-nav 
+                                <a href="{{ route('admin.detail.pertanyaan', $file->pertanyaan_id) }}" class=" text-white p-2 sm:px-4 rounded-md bg-nav 
                                 hover:bg-gradb focus:bg-gradb transition duration-700">Detail</a>
                             </td>
                         </tr>
-                        
+
                     </tbody>
                     @endforeach
                 </table>
-                
+
             </div>
 
             <div class="my-20">

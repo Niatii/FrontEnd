@@ -102,7 +102,7 @@ Route::prefix('guest')->group(function () {
 
     Route::get('/Riset', [RisetController::class, 'selectGuest'])->name('guest.riset');
     Route::get('/Detail_Riset/{id}', [RisetController::class, 'ShowGuest'])->name('guest.riset.detail');
-    
+
 
     Route::get('/Konsultasi', [KonsultasiController::class, 'selectGuest'])->name('guest.konsultasi');
     Route::get('/Konsultasi/Detail/{id}', [KonsultasiController::class, 'ShowGuest'])->name('guest.konsultasi.detail');
@@ -150,7 +150,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/tambah', [TentangkamiController::class, 'insertTentangkami'])->name('admin.tentangkami.tambah');
         Route::get('/edit/{id}', [TentangkamiController::class, 'edit'])->name('admin.tentangkami.edit');
         Route::post('/update/{id}', [TentangkamiController::class, 'update'])->name('admin.tentangkami.update');
-        Route::post('/delete/{id}', [TentangkamiController::class, 'delete'])->name('admin.tentangkami.delete');
+        Route::delete('/delete/{id}', [TentangkamiController::class, 'delete'])->name('admin.tentangkami.delete');
     });
 
     Route::prefix('konsultasi')->group(function () {
@@ -162,10 +162,10 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit/{id}', [KonsultasiController::class, 'edit'])->name('admin.konsultasi.edit');
         Route::post('/tambah', [KonsultasiController::class, 'insertKonsultasi'])->name('admin.konsultasi.tambah');
         Route::post('/update/{id}', [KonsultasiController::class, 'update'])->name('admin.konsultasi.update');
-        Route::post('/delete/{id}', [KonsultasiController::class, 'delete'])->name('admin.konsultasi.delete');
+        Route::delete('/delete/{id}', [KonsultasiController::class, 'delete'])->name('admin.konsultasi.delete');
 
         Route::get('/pertanyaan', [PertanyaanController::class, 'selectAdmin'])->name('admin.konsultasi.pertanyaan');
-        Route::get('/detail_pertanyaan/{id}', [PertanyaanController::class, 'showAdmin'])->name('admin.konsultasi.detail');
+        Route::get('/pertanyaan/detail/{id}', [PertanyaanController::class, 'showAdmin'])->name('admin.detail.pertanyaan');
     });
 
     Route::prefix('riset')->group(function () {
@@ -177,7 +177,7 @@ Route::prefix('admin')->group(function () {
         });
         Route::post('/tambah', [RisetController::class, 'insertRiset'])->name('admin.riset.tambah');
         Route::post('/update/{id}', [RisetController::class, 'update'])->name('admin.riset.update');
-        Route::post('/delete/{id}', [RisetController::class, 'delete'])->name('admin.riset.delete');
+        Route::delete('/delete/{id}', [RisetController::class, 'delete'])->name('admin.riset.delete');
     });
 
     Route::prefix('publikasi')->group(function () {
@@ -190,7 +190,7 @@ Route::prefix('admin')->group(function () {
         Route::post('/tambah', [PublikasiController::class, 'insertPublikasi'])->name('admin.publikasi.tambah');
         Route::get('/edit/{id}', [PublikasiController::class, 'edit'])->name('admin.publikasi.edit');
         Route::post('/update/{id}', [PublikasiController::class, 'update'])->name('admin.publikasi.update');
-        Route::post('/delete/{id}', [PublikasiController::class, 'delete'])->name('admin.publikasi.delete');
+        Route::delete('/delete/{id}', [PublikasiController::class, 'delete'])->name('admin.publikasi.delete');
     });
 
     Route::prefix('berita')->group(function () {

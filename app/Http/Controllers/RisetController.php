@@ -99,6 +99,33 @@ class RisetController extends Controller
         return redirect()->route('admin.riset.detail', $id)->with(['success' => 'Data Berhasil Diubah!']);
     }
 
+    public function delete($id)
+    {
+        // Cari data berdasarkan ID
+        $files = Riset::where('riset_id', $id)->first();
+
+        if (!$files) {
+            // Jika data tidak ditemukan, redirect dengan pesan error
+            return redirect()->route('admin.riset')->with(['error' => 'Data tidak ditemukan']);
+        }
+
+        // Hapus file gambar dari folder public/images jika ada
+        if ($files->photo) {
+            $oldImagePath = public_path('images/' . $files->photo);
+            if (File::exists($oldImagePath)) {
+                File::delete($oldImagePath);
+            }
+        }
+
+        // Hapus data dari database
+        $files->delete();
+
+        // Redirect ke halaman yang sesuai dengan pesan sukses
+        return redirect()->route('admin.riset')->with(['success' => 'Data berhasil dihapus']);
+    }
+
+
+
     // guest
     public function selectGuest()
     {

@@ -99,11 +99,38 @@ class PublikasiController extends Controller
         return redirect()->route('admin.publikasi.detail', $id)->with(['success' => 'Data Berhasil Diubah!']);
     }
 
-     // guest
+    public function delete($id)
+    {
+        // Cari data berdasarkan ID
+        $files = Publikasi::where('publikasi_id', $id)->first();
+
+        if (!$files) {
+            // Jika data tidak ditemukan, redirect dengan pesan error
+            return redirect()->route('admin.publikai')->with(['error' => 'Data tidak ditemukan']);
+        }
+
+        // Hapus file gambar dari folder public/images jika ada
+        if ($files->photo) {
+            $oldImagePath = public_path('images/' . $files->photo);
+            if (File::exists($oldImagePath)) {
+                File::delete($oldImagePath);
+            }
+        }
+
+        // Hapus data dari database
+        $files->delete();
+
+        // Redirect ke halaman yang sesuai dengan pesan sukses
+        return redirect()->route('admin.publikasi')->with(['success' => 'Data berhasil dihapus']);
+    }
+
+
+
+    // guest
     public function selectGuest()
     {
         $files = Publikasi::all();
- 
+
         return view('guest.publikasi', compact('files'));
     }
 
@@ -113,7 +140,7 @@ class PublikasiController extends Controller
 
         return view('guest.publikasi_detail', compact('files'));
     }
- 
+
     // user
     public function selectUser()
     {
@@ -122,11 +149,10 @@ class PublikasiController extends Controller
         return view('user.publikasi', compact('files'));
     }
 
-     public function showUser($id)
+    public function showUser($id)
     {
         $files = Publikasi::find($id);
 
         return view('user.publikasi_detail', compact('files'));
     }
-
 }
