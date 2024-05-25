@@ -41,7 +41,7 @@
                 @foreach ($files as $file)
 
                 <div class="w-full" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
-                    <a href="{{ route('guest.publikasi.detail', $file->pubikasi_id) }}">
+                    <a href="{{ route('guest.publikasi.detail', $file->publikasi_id) }}">
                         <img src="{{ asset('images/'.$file->photo) }}" alt="publikasi" class="w-full hover:brightness-50" />
                     </a>
                     <div class="py-3">

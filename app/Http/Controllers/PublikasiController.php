@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Publikasi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class PublikasiController extends Controller
 {
@@ -49,6 +50,13 @@ class PublikasiController extends Controller
  
          return view('guest.publikasi', compact('files'));
      }
+
+     public function showGuest($id)
+    {
+        $files = Publikasi::find($id);
+
+        return view('guest.publikasi.detail', compact('files'));
+    }
  
      // user
      public function selectUser()
@@ -57,5 +65,12 @@ class PublikasiController extends Controller
  
          return view('user.publikasi', compact('files'));
      }
+
+     public function showUser($id)
+    {
+        $files = Publikasi::find($id);
+
+        return view('user.publikasi.detail', compact('files'));
+    }
 
 }

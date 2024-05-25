@@ -54,7 +54,7 @@
                         <img src="{{ asset('images/'.$file->photo) }}" alt="publikasi" class="w-full hover:brightness-50" />
                     </a>
                     <div class="py-3">
-                        <a href="{{ route('user.konsultasi.detail', $file->publikasi_id) }}">
+                        <a href="{{ route('user.publikasi.detail', $file->publikasi_id) }}">
                             <h5 class="mb-2 text-xs md:text-lg font-bold tracking-tight hover:text-sky-600">{{ $file->title }}</h5>
                         </a>
                         <p class="mb-3 text-[10px] overflow-hidden md:text-xs h-[62px]">
