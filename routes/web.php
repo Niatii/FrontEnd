@@ -197,12 +197,14 @@ Route::prefix('admin')->group(function () {
     Route::prefix('publikasi')->group(function () {
         Route::get('/', [PublikasiController::class, 'selectAdmin'])->name('admin.publikasi');
         Route::get('/detail/{id}', [PublikasiController::class, 'showAdmin'])->name('admin.publikasi.detail');
-        Route::get('/edit', function () {
-            return view('admin/publikasi/edit');
-        });
+
         Route::get('/tambah', function () {
             return view('admin/publikasi/tambah');
         });
+        Route::post('/tambah', [PublikasiController::class, 'insertPublikasi'])->name('admin.publikasi.tambah');
+        Route::get('/edit/{id}', [PublikasiController::class, 'edit'])->name('admin.publikasi.edit');
+        Route::post('/update/{id}', [PublikasiController::class, 'update'])->name('admin.publikasi.update');
+        Route::post('/delete/{id}', [PublikasiController::class, 'delete'])->name('admin.publikasi.delete');
     });
 
     Route::prefix('berita')->group(function () {
