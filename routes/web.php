@@ -42,7 +42,7 @@ Route::prefix('user')->group(function () {
     });
 
     Route::get('/TentangKami', [TentangkamiController::class, 'selectUser'])->name('user.tentangkami');;
-    Route::get('/TentangKami/Detail', [TentangkamiController::class, 'show'])->name('user.tentangkami.detail');;
+    Route::get('/TentangKami/Detail/{id}', [TentangkamiController::class, 'showUser'])->name('user.tentangkami.detail');;
 
     Route::get('/Riset', function () {
         return view('user/riset');
@@ -102,7 +102,7 @@ Route::prefix('user')->group(function () {
 Route::prefix('guest')->group(function () {
 
     Route::get('/TentangKami', [TentangkamiController::class, 'selectGuest'])->name('guest.tentangkami');
-    Route::get('/TentangKami/Detail/{id}', [TentangkamiController::class, 'selectGuest'])->name('guest.tentangkami.detail');
+    Route::get('/TentangKami/Detail/{id}', [TentangkamiController::class, 'showGuest'])->name('guest.tentangkami.detail');
 
     Route::get('/Riset', function () {
         return view('guest/riset');

@@ -41,8 +41,8 @@
             <div class="px-2 md:px-10 items-center mb-2 sm:mb-4 lg:mb-8" data-aos="fade-right" data-aos-offset="150" data-aos-easing="ease-in-sine">
                 <div class="w-full grid grid-cols-3">
                     <div class="flex items-center">
-                        <a href="/user/Detail_TentangKami">
-                            <img class="w-full hover:brightness-50" src="{{ asset('storage/properti/2.jpg') }}" alt="gambar pelatihan" />
+                        <a href="{{ route('user.tentangkami.detail', $file->tentang_id) }}">
+                            <img class="w-full hover:brightness-50" src="{{ asset('images/'.$file->photo) }}" alt="gambar pelatihan" />
                         </a>
                     </div>
                     <div class="mx-2 h-20 sm:px-2 sm:h-28 md:h-44 sm:pt-3 md:pt-5 overflow-hidden col-span-2 ">
@@ -53,7 +53,7 @@
                             {{ $file->content }}
                         </p>
                         <hr class="border-t-1 border-black mt-1">
-                        <a href="/user/Detail_TentangKami" class="text-[8px] md:text-xs lg:text-base hover:text-sky-600">
+                        <a href="{{ route('user.tentangkami.detail', $file->tentang_id) }}" class="text-[8px] md:text-xs lg:text-base hover:text-sky-600">
                             selengkapnya...
                         </a>
                     </div>

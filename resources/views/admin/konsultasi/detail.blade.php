@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,15 +23,21 @@
 
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
 </head>
+
 <body class="bg-latar text-black pb-12 min-h-screen">
-    
+
     <!-- header -->
-   @include('components.headeradmin')
+    @include('components.headeradmin')
 
     <!-- Content Start -->
-    <section  class="pt-36 mx-8 sm:pt-40 relative">
+    <section class="pt-36 mx-8 sm:pt-40 relative">
+        @if (session('success'))
+        <div class="bg-blue-400 text-white p-4 rounded mb-8" style=" margin-bottom: 1rem;">
+            {{ session('success') }}
+        </div>
+        @endif
         <div class="bg-white w-full rounded-md pb-12">
             <div class="flex pt-6 mt-6 gap-x-4 justify-end mx-5 md:px-20">
                 <button onclick="showDialog()" class="text-xs bg-gradb text-white py-1 px-3 rounded-md md:text-base hover:bg-latar focus:bg-latar
@@ -43,25 +50,13 @@
                 </a>
             </div>
             <div class="px-5 pt-5 md:px-20 w-full ">
-                <img class="object-cover aspect-16/9 w-full rounded-md" src="{{ asset('images/'.$files->photo) }}" alt="detail tentang kami"
-                data-aos="fade-zoom-in"
-                data-aos-easing="ease-in-back"
-                data-aos-delay="150"
-                data-aos-offset="0">
+                <img class="object-cover aspect-16/9 w-full rounded-md" src="{{ asset('images/'.$files->photo) }}" alt="detail tentang kami" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="150" data-aos-offset="0">
                 <div class="flex flex-col justify-between py-4 leading-normal">
-                    <h5 class="mb-4 text-xl md:text-3xl font-bold "
-                    data-aos="fade-zoom-in"
-                    data-aos-easing="ease-in-back"
-                    data-aos-delay="150"
-                    data-aos-offset="0">{{$files->title}}</h5>
-                    <p class="mb-3 font-normal "
-                    data-aos="fade-zoom-in"
-                    data-aos-easing="ease-in-back"
-                    data-aos-delay="150"
-                    data-aos-offset="0">
-                    {{$files->content}}
+                    <h5 class="mb-4 text-xl md:text-3xl font-bold " data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="150" data-aos-offset="0">{{$files->title}}</h5>
+                    <p class="mb-3 font-normal " data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="150" data-aos-offset="0">
+                        {{$files->content}}
                     </p>
-                    
+
                 </div>
             </div>
     </section>
@@ -69,13 +64,14 @@
 
     <!-- modal -->
     @include('modals.modal-hapus_konsultasi')
-    
+
 
     <!-- javascript -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-    AOS.init();
+        AOS.init();
     </script>
     @vite('resources/js/app.js')
 </body>
+
 </html>
