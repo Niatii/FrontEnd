@@ -178,12 +178,13 @@ Route::prefix('admin')->group(function () {
     Route::prefix('riset')->group(function () {
         Route::get('/', [RisetController::class, 'selectAdmin'])->name('admin.riset');
         Route::get('/detail/{id}', [RisetController::class, 'showAdmin'])->name('admin.riset.detail');
-        Route::get('/edit', function () {
-            return view('admin/riset/edit');
-        });
+        Route::get('/edit/{id}', [RisetController::class, 'edit'])->name('admin.riset.edit');
         Route::get('/tambah', function () {
             return view('admin/riset/tambah');
         });
+        Route::post('/tambah', [RisetController::class, 'insertRiset'])->name('admin.riset.tambah');
+        Route::post('/update/{id}', [RisetController::class, 'update'])->name('admin.riset.update');
+        Route::post('/delete/{id}', [RisetController::class, 'delete'])->name('admin.riset.delete');
     });
 
     Route::prefix('publikasi')->group(function () {

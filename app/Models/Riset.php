@@ -16,10 +16,9 @@ class Riset extends Model
     public $timestamps = false;
 
     // Kolom-kolom yang dapat diisi secara massal (fillable)
-    // protected $fillable = [
-        // 'title',
-        //'content',
-        // 'photo',
-        // // tambahkan kolom lainnya di sini sesuai kebutuhan anda
-        //  ];
+    protected $fillable = [
+        'title',
+        'content',
+        'photo',
+    ];
 }
