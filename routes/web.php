@@ -55,12 +55,8 @@ Route::prefix('user')->group(function () {
     Route::get('/Konsultasi/Detail/{id}', [KonsultasiController::class, 'ShowUser'])->name('user.konsultasi.detail');
     Route::post('/Konsultasi/Detail', [PertanyaanController::class, 'insertPertanyaanUser'])->name('user.pertanyaan.tambah');
 
-    Route::get('/Publikasi', function () {
-        return view('user/publikasi');
-    });
-    Route::get('/Detail_Publikasi', function () {
-        return view('user/publikasi_detail');
-    });
+    Route::get('/Publikasi', [PublikasiController::class, 'selectUser'])->name('guest.publikasi');
+    Route::get('/Publikasi/Detail/{id}', [PublikasiController::class, 'showUser'])->name('guest.publikasi.detail');
 
     Route::get('/Berita', function () {
         return view('user/berita');
@@ -120,12 +116,8 @@ Route::prefix('guest')->group(function () {
     Route::post('/Konsultasi/Detail', [PertanyaanController::class, 'insertPertanyaanGuest'])->name('guest.pertanyaan.tambah');
 
 
-    Route::get('/Publikasi', function () {
-        return view('guest/publikasi');
-    });
-    Route::get('/Detail_Publikasi', function () {
-        return view('guest/publikasi_detail');
-    });
+    Route::get('/Publikasi', [PublikasiController::class, 'selectGuest'])->name('guest.publikasi');
+    Route::get('/Publikasi/Detail/{id}', [PublikasiController::class, 'showGuest'])->name('guest.publikasi.detail');
 
     Route::get('/Akademi', function () {
         return view('guest/akademi');
