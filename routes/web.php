@@ -101,7 +101,7 @@ Route::prefix('guest')->group(function () {
     Route::get('/TentangKami/Detail/{id}', [TentangkamiController::class, 'showGuest'])->name('guest.tentangkami.detail');
 
     Route::get('/Riset', [RisetController::class, 'selectGuest'])->name('guest.riset');
-    Route::get('/Detail_Riset/{id}', [RisetController::class, 'ShowGuest'])->name('guest.riset.detail');
+    Route::get('/Riset/Detail/{id}', [RisetController::class, 'ShowGuest'])->name('guest.riset.detail');
 
 
     Route::get('/Konsultasi', [KonsultasiController::class, 'selectGuest'])->name('guest.konsultasi');
