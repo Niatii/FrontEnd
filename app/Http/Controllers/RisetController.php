@@ -9,7 +9,8 @@ use illuminate\Support\Facades\File;
 class RisetController extends Controller
 {
     // admin
-    public function selectAdmin() {
+    public function selectAdmin()
+    {
         $files = Riset::all();
 
         return view('admin.riset.riset', compact('files'));
@@ -99,7 +100,7 @@ class RisetController extends Controller
     }
 
     // guest
-    public function selectGuest() 
+    public function selectGuest()
     {
         $files = Riset::all();
 
@@ -113,8 +114,8 @@ class RisetController extends Controller
         return view('guest.riset_detail', compact('files'));
     }
 
-     // user
-    public function selectUser() 
+    // user
+    public function selectUser()
     {
         $files = Riset::all();
 

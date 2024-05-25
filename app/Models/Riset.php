@@ -11,7 +11,7 @@ class Riset extends Model
 
     // Nama tabel yang akan digunakan oleh model
     protected $table = 'riset';
-    protected $primarykey = 'riset_id';
+    protected $primaryKey = 'riset_id';
 
     public $timestamps = false;
 
