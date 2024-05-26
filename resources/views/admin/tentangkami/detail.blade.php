@@ -26,7 +26,7 @@
 
 </head>
 
-<body class="bg-latar text-black min-h-screen">
+<body class="bg-latar text-black min-h-screen pb-12">
 
     <!-- header -->
     @include('components.headeradmin')
@@ -46,7 +46,8 @@
                 <form action="{{ route('admin.tentangkami.delete', $files->tentang_id) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" onclick="return confirm('Apakah benar ingin menghapus {{$files->title}}')" class="text-xs bg-gradb text-white py-1 px-3 rounded-md md:text-base hover:bg-latar focus:bg-latar
+                    <button type="submit" onclick="return confirm('Apakah benar ingin menghapus {{$files->title}}')" 
+                    class="text-xs bg-gradb text-white py-1 px-3 rounded-md md:text-base hover:bg-latar focus:bg-latar
                     hover:text-black focus:text-black transition duration-700">
                         Hapus
                     </button>
@@ -56,10 +57,13 @@
 
             </div>
             <div class="px-5 pt-5 md:px-20 w-full ">
-                <img class="object-cover w-full rounded-md" src="{{ asset('images/'.$files->photo) }}" alt="detail tentang kami" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="150" data-aos-offset="0">
+                <img class="object-cover aspect-16/9 w-full rounded-md" src="{{ asset('images/'.$files->photo) }}" 
+                alt="detail tentang kami" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="150" data-aos-offset="0">
                 <div class="flex flex-col justify-between py-4 leading-normal">
-                    <h5 class="mb-4 text-xl md:text-3xl font-bold " data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="150" data-aos-offset="0">{{$files->title}}</h5>
-                    <p class="mb-3 font-normal " data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="150" data-aos-offset="0">
+                    <h5 class="mb-4 text-xl md:text-3xl font-bold " data-aos="fade-zoom-in" 
+                    data-aos-easing="ease-in-back" data-aos-delay="150" data-aos-offset="0">{{$files->title}}</h5>
+                    <p class="mb-3 font-normal " data-aos="fade-zoom-in" data-aos-easing="ease-in-back" 
+                    data-aos-delay="150" data-aos-offset="0">
                         {{$files->content}}
                     </p>
 
