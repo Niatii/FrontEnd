@@ -48,10 +48,9 @@
                 <form id="deleteForm" action="{{ route('admin.tentangkami.delete', $files->tentang_id) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" onclick="return confirm('Apakah benar ingin menghapus {{$files->title}}')" class="text-xs bg-gradb text-white py-1 px-3 rounded-md md:text-base hover:bg-latar focus:bg-latar
-                    hover:text-black focus:text-black transition duration-700">
-                        Hapus
-                    </button>
+                    <button type="button" onclick="confirmDelete('{{ $files->title }}')" class="text-xs bg-gradb text-white py-1 px-3 rounded-md md:text-base hover:bg-latar focus:bg-latar hover:text-black focus:text-black transition duration-700">
+        Hapus
+    </button>
                 </form>
 
                 <script>

@@ -38,7 +38,7 @@
     </div>
     <section  class="pt-36 sm:pt-40 mb-12 mx-8">
     @if (session('success'))
-        <div class="bg-blue-400 text-white p-4 rounded mb-8" style=" margin-bottom: 1rem;">
+        <div class="bg-blue-900 text-white p-4 rounded mb-8" style=" margin-bottom: 1rem;">
             {{ session('success') }}
         </div>
         @endif
