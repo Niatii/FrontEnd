@@ -49,8 +49,8 @@
                     @csrf
                     @method('DELETE')
                     <button type="button" onclick="confirmDelete('{{ $files->title }}')" class="text-xs bg-gradb text-white py-1 px-3 rounded-md md:text-base hover:bg-latar focus:bg-latar hover:text-black focus:text-black transition duration-700">
-        Hapus
-    </button>
+                        Hapus
+                    </button>
                 </form>
 
                 <script>
