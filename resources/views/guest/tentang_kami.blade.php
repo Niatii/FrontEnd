@@ -33,15 +33,18 @@
     <!-- Content Start -->
     <section class="pt-36 sm:pt-40 mb-12 mx-8 flex justify-center">
         <div class="bg-white w-full rounded-md pb-12">
-            <h1 class="text-center font-bold text-wjudul my-4 md:text-2xl lg:text-3xl md:my-8" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="200" data-aos-offset="0">Tentang Kami</h1>
+            <h1 class="text-center font-bold text-wjudul my-4 md:text-2xl lg:text-3xl md:my-8" 
+            data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="200" data-aos-offset="0">Tentang Kami</h1>
 
             @foreach ($files as $file)
-            <div class="px-2 md:px-10 items-center mb-2 sm:mb-4 lg:mb-8" data-aos="fade-right" data-aos-offset="150" data-aos-easing="ease-in-sine">
+            <div class="px-2 md:px-10 items-center mb-2 sm:mb-4 lg:mb-8" data-aos="fade-right" data-aos-offset="150"
+             data-aos-easing="ease-in-sine">
                 <div class="w-full grid grid-cols-3">
                     <div class="flex items-center">
                         <!-- Tampilkan gambar atau tautan ke file -->
                         <a href="{{ route('guest.tentangkami.detail', $file->tentang_id) }}">
-                            <img class="w-full hover:brightness-50" src="{{ asset('images/'.$file->photo) }}" alt="{{ $file->photo }}" />
+                            <img class="w-full aspect-16/9 object-cover hover:brightness-50" 
+                            src="{{ asset('images/'.$file->photo) }}" alt="{{ $file->photo }}" />
                         </a>
                     </div>
                     <div class="mx-2 h-20 sm:px-2 sm:h-28 md:h-44 sm:pt-3 md:pt-5 overflow-hidden col-span-2 ">
@@ -52,7 +55,8 @@
                             {{ $file->content }}
                         </p>
                         <hr class="border-t-1 border-black mt-1">
-                        <a href="{{ route('guest.tentangkami.detail', $file->tentang_id) }}" class="text-[8px] md:text-xs lg:text-base hover:text-sky-600">
+                        <a href="{{ route('guest.tentangkami.detail', $file->tentang_id) }}" class="text-[8px] md:text-xs 
+                        lg:text-base hover:text-sky-600">
                             selengkapnya...
                         </a>
                     </div>
