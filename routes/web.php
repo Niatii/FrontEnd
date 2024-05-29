@@ -6,6 +6,7 @@ use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\RisetController;
 use App\Http\Controllers\PublikasiController;
 use App\Http\Controllers\PertanyaanController;
+use App\Http\Controllers\LoginController;
 use App\Models\Konsultasi;
 use App\Models\Riset;
 use App\Models\Tentangkami;
@@ -16,9 +17,8 @@ use App\Models\Pertanyaan;
 
 
 
-Route::get('/login', function () {
-    return view('auth/login');
-});
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/sign', [LoginController::class, 'sign'])->name('sign');
 
 Route::get('/daftar', function () {
     return view('auth/daftar');
