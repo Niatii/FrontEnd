@@ -23,6 +23,8 @@
 
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 </head>
 
@@ -43,15 +45,20 @@
     </div>
     <section class="pt-36 mx-8 sm:pt-40">
         @if (session('success'))
-        <div class="bg-blue-900 text-white p-4 rounded mb-8" style=" margin-bottom: 1rem;">
-            {{ session('success') }}
-        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                Swal.fire({
+                    title: "{{ session('success') }}",
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+            });
+        </script>
         @endif
 
         <div class=" bg-white w-full rounded-md pb-12">
 
-            <h1 class="ml-2 pt-6 md:ml-8 font-bold text-wjudul my-4 md:text-2xl lg:text-3xl md:my-8" 
-            data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="200" data-aos-offset="0">
+            <h1 class="ml-2 pt-6 md:ml-8 font-bold text-wjudul my-4 md:text-2xl lg:text-3xl md:my-8" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="200" data-aos-offset="0">
                 Tentang Kami
             </h1>
 
