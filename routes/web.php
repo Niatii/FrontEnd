@@ -7,6 +7,8 @@ use App\Http\Controllers\RisetController;
 use App\Http\Controllers\PublikasiController;
 use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\BarcodeController;
+use App\Http\Controllers\PembayaranController;
 use App\Models\Konsultasi;
 use App\Models\Riset;
 use App\Models\Tentangkami;
@@ -80,9 +82,7 @@ Route::prefix('user')->group(function () {
         return view('user/kegiatan_detail');
     });
 
-    Route::get('/Pembayaran', function () {
-        return view('user/pembayaran');
-    });
+    Route::get('/Pembayaran', [PembayaranController::class, 'showPembayaran'])->name('pembayaran');
 
     Route::get('/Detail_Riwayat', function () {
         return view('user/detail_riwayat');
@@ -242,9 +242,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/', function () {
             return view('admin/akademi/akademi');
         });
-        Route::get('/barcode', function () {
-            return view('admin/akademi/barcode');
-        });
+        Route::get('/barcode', [BarcodeController::class, 'index'])->name('barcode');
+        Route::post('/tambah', [BarcodeController::class, 'insert'])->name('barcode.tambah');
+        Route::delete('/delete/{id}', [BarcodeController::class, 'delete'])->name('barcode.delete');
         Route::get('/detail_pembayaran', function () {
             return view('admin/akademi/detail_bayar');
         });

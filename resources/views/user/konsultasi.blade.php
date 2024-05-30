@@ -24,6 +24,7 @@
 
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="bg-latar text-black min-h-screen">
@@ -33,10 +34,17 @@
     <!-- Content Start -->
     <section class="pt-36 sm:pt-40 mb-12 mx-8">
         @if (session('success'))
-        <div class="bg-blue-400 text-white p-4 rounded mb-8" style=" margin-bottom: 1rem;">
-            {{ session('success') }}
-        </div>
-
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "{{ session('success') }}",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            });
+        </script>
         @endif
         <div class="bg-white w-full rounded-md">
             <div class="mx-3 my-2">
@@ -44,10 +52,10 @@
                     Konsultasi</h1>
             </div>
 
-            
+
 
             <div class="grid gap-x-5 sm:gap-x-10 gap-y-2 grid-cols-2 mx-5 sm:mx-10 my-2 ">
-                
+
                 @foreach ($files as $file)
 
                 <div class="w-full" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
@@ -68,7 +76,7 @@
 
                 @endforeach
 
-               
+
             </div>
         </div>
     </section>

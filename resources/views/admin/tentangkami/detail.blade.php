@@ -82,13 +82,33 @@
 
             </div>
             <div class="px-5 pt-5 md:px-20 w-full ">
+
+
                 <img class="object-cover aspect-16/9 w-full rounded-md" src="{{ asset('images/'.$files->photo) }}" alt="detail tentang kami" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="150" data-aos-offset="0">
+
+
+
                 <div class="flex flex-col justify-between py-4 leading-normal">
                     <h5 class="mb-4 text-xl md:text-3xl font-bold " data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="150" data-aos-offset="0">{{$files->title}}</h5>
                     <p class="mb-3 font-normal " data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="150" data-aos-offset="0">
                         {{$files->content}}
                     </p>
 
+                    <button id="testButton">Test SweetAlert</button>
+
+                    <script>
+                        document.getElementById('testButton').addEventListener('click', function() {
+                            const imageUrl = '{{ asset("images/MBRC_1716998415484.png") }}'; // Ganti dengan path yang benar
+                            console.log("Image URL:", imageUrl); // Log URL gambar
+                            Swal.fire({
+
+                                imageUrl: imageUrl,
+                                imageWidth: 400,
+                                imageHeight: 400,
+                                imageAlt: 'Test Image'
+                            });
+                        });
+                    </script>
                 </div>
             </div>
         </div>

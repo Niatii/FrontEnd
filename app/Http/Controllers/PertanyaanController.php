@@ -31,7 +31,7 @@ class PertanyaanController extends Controller
             'pertanyaan' => 'required|string',
         ]);
 
-        
+
         $produk = new Pertanyaan();
         $produk->name = $request->input('name');
         $produk->email = $request->input('email');
@@ -41,7 +41,7 @@ class PertanyaanController extends Controller
         return redirect()->route('guest.konsultasi')->with('success', 'Data Berhasil Disimpan!');
     }
 
-    public function insertPertanyaanUser(request $request)
+    public function insertPertanyaanUser(request $request, $id)
     {
         $request->validate([
             'name' => 'required|string|max:255',
@@ -49,14 +49,13 @@ class PertanyaanController extends Controller
             'pertanyaan' => 'required|string',
         ]);
 
-        
+
         $produk = new Pertanyaan();
         $produk->name = $request->input('name');
         $produk->email = $request->input('email');
         $produk->pertanyaan = $request->input('pertanyaan');
         $produk->save();
 
-        return redirect()->route('user.konsultasi')->with('success', 'Data Berhasil Disimpan!');
+        return redirect()->route('user.konsultasi')->with('success', 'Pertanyaan Berhasil Dikirim!');
     }
 }
-
