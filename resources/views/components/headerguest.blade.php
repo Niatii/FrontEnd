@@ -11,7 +11,7 @@
                 </p>
             </div>
             <div class="relative text-black">
-                <a href="/login" id="user">
+                <a href="{{ route('login') }}" id="user">
                     <img src="{{ asset('storage/properti/5.jpg') }}" alt="gambar properti" class="w-8 my-2 mx-2 rounded-full sm:w-10 sm:ml-10 sm:mr-4 md:ml-24
                         object-cover aspect-ratio-1/1">
                 </a>

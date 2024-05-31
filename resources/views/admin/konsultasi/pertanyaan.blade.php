@@ -62,7 +62,7 @@
                                 {{ $file->name }}
                             </td>
                             <td class="px-2 py-4 border border-slate-500">
-                                {{ $file->email }}
+                                <a href="mailto:{{ $file->email }}">{{ $file->email }}</a>
                             </td>
                             <td class="px-2 py-4 border border-slate-500 text-center">
                                 <a href="{{ route('admin.detail.pertanyaan', $file->pertanyaan_id) }}" class=" text-white p-2 sm:px-4 rounded-md bg-nav 

@@ -17,11 +17,11 @@
                     transition duration-700" id="dropdownuser">
                      <li class="my-1 lg:my-2">
                          <a href="/user/profil" class="hover:text-sky-600">
-                             Profil
+                             Profi
                          </a>
                      </li>
                      <li class="my-1 lg:my-2">
-                         <a href="/" class="hover:text-sky-600">
+                         <a href="{{ route('home') }}" class="hover:text-sky-600">
                              Logout
                          </a>
                      </li>

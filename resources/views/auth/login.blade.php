@@ -49,14 +49,14 @@
                         @csrf
                         <div>
                             <label for="username" class="block mb-2 text-xs  text-white">Nama Pengguna</label>
-                            <input type="text" name="username" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 md:text-xs rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full px-3 placeholder:text-xs " placeholder="Nama Pengguna">
+                            <input type="text" name="username" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 md:text-xs rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full px-3 placeholder:text-xs" placeholder="Nama Pengguna" value="{{ old('username') }}">
                         </div>
                         @error('username')
                         <small>{{ $message }}</small>
                         @enderror
                         <div>
                             <label for="password" class="block mb-2 text-xs text-white">Masukkan Kata Sandi</label>
-                            <input type="password" name="password" id="password" placeholder="Kata Sandi" class="bg-gray-50 border border-gray-300 text-gray-900 md:text-xs rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full px-3  placeholder:text-xs ">
+                            <input type="password" name="password" id="password" placeholder="Kata Sandi" class="bg-gray-50 border border-gray-300 text-gray-900 md:text-xs rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full px-3  placeholder:text-xs " value="{{ old('password') }}">
                         </div>
                         @error('password')
                         <small>{{ $message }}</small>
@@ -71,10 +71,9 @@
                         </div>
                         <div class="text-center my-4 text-[10px] lg:my-5">
                             <p class="mb-4 text-white lg:text-xs">Belum Punya Akun?</p>
-                            <a href="/daftar" type="button" class="bg-white text-black w-8/12 rounded-2xl py-2 lg:text-xs
+                            <a href="{{ route('daftar') }}" type="button" class="bg-white text-black w-8/12 rounded-2xl py-2 lg:text-xs
                         lg:py-3 lg:rounded-3xl hover:bg-nav hover:text-white transition duration-700 ">Daftar</a>
                         </div>
-
                     </form>
                 </div>
             </div>

@@ -17,31 +17,31 @@ use App\Models\Pertanyaan;
 
 
 
+Route::prefix('auth')->group(function () {
+    Route::get('/login', [LoginController::class, 'index'])->name('login');
+    Route::post('/sign', [LoginController::class, 'sign'])->name('sign');
 
 
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/sign', [LoginController::class, 'sign'])->name('sign');
+    Route::get('/daftar', [LoginController::class, 'daftar'])->name('daftar');
+    Route::post('/register', [LoginController::class, 'register'])->name('register');
 
-Route::get('/daftar', function () {
-    return view('auth/daftar');
+
+    Route::get('/LupaPassword', function () {
+        return view('auth/lupa_password');
+    });
+
+    Route::get('/verifikasi', function () {
+        return view('auth/verifikasi');
+    });
 });
 
-Route::get('/LupaPassword', function () {
-    return view('auth/lupa_password');
-});
 
-Route::get('/verifikasi', function () {
-    return view('auth/verifikasi');
-});
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [TentangkamiController::class, 'dashboard'])->name('home');
+
 
 Route::prefix('user')->group(function () {
-    Route::get('/', function () {
-        return view('user/user_home');
-    });
+    Route::get('/', [TentangkamiController::class, 'home'])->name('user.home');
 
     Route::get('/TentangKami', [TentangkamiController::class, 'selectUser'])->name('user.tentangkami');
     Route::get('/TentangKami/Detail/{id}', [TentangkamiController::class, 'showUser'])->name('user.tentangkami.detail');

@@ -8,6 +8,17 @@ use Illuminate\Support\Facades\File;
 
 class TentangkamiController extends Controller
 {
+    //home user
+    public function home()
+    {
+        return view('user.user_home')->with('success', 'Login berhasil');
+    }
+    public function dashboard()
+    {
+        return view('home');
+    }
+
+
     // admin
     public function selectAdmin()
     {

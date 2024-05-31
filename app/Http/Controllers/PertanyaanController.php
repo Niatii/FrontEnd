@@ -41,7 +41,7 @@ class PertanyaanController extends Controller
         return redirect()->route('guest.konsultasi')->with('success', 'Data Berhasil Disimpan!');
     }
 
-    public function insertPertanyaanUser(request $request, $id)
+    public function insertPertanyaanUser(request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',
