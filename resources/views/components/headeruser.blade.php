@@ -21,7 +21,7 @@
                          </a>
                      </li>
                      <li class="my-1 lg:my-2">
-                         <a href="{{ route('home') }}" class="hover:text-sky-600">
+                         <a href="{{ route('logout') }}" class="hover:text-sky-600">
                              Logout
                          </a>
                      </li>

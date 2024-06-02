@@ -35,19 +35,7 @@
 
     <!-- Content Start -->
     <section class="pt-32 sm:pt-40 mb-18">
-        @if (session('success'))
-        <script>
-            document.addEventListener('DOMContentLoaded', (event) => {
-                Swal.fire({
-                    position: "middle",
-                    icon: "success",
-                    title: "{{ session('success') }}",
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-            });
-        </script>
-        @endif
+
         <form class="w-8/12 mx-3">
             <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
             <div class="relative">
@@ -75,6 +63,20 @@
 
     <!-- footer -->
     @include('components.footeruser')
+
+    @if (session('success'))
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            Swal.fire({
+                position: "middle",
+                icon: "success",
+                title: "{{ session('success') }}",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        });
+    </script>
+    @endif
 
     <!-- javascript -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

@@ -14,23 +14,37 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
-    public function sign(request $request)
+    public function sign(Request $request)
     {
         $request->validate([
             'username' => 'required',
             'password' => 'required',
         ]);
 
-        $data = [
-            'username' => $request->username,
-            'password' => $request->password
-        ];
+        // Ambil user berdasarkan username
+        $user = User::where('username', $request->username)->first();
 
-        if (Auth::attempt($data)) {
-            return redirect()->route('user.home')->with('success', 'Login berhasil');
+        if ($user) {
+            // Jika user ditemukan, cek password
+            if (Hash::check($request->password, $user->password)) {
+                // Jika password cocok, lakukan login
+                Auth::login($user);
+                return redirect()->route('user.home')->with('success', 'Login berhasil');
+            } else {
+                // Jika password salah
+                return redirect()->route('login')->with('failed', 'Kata sandi salah');
+            }
         } else {
-            return redirect()->route('login')->with('failed', 'Login gagal');
+            // Jika user tidak ditemukan
+            return redirect()->route('login')->with('failed', 'Username tidak ditemukan');
         }
+    }
+
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('home')->with('success', 'Logout berhasil!');
     }
 
     public function daftar()
@@ -43,8 +57,26 @@ class LoginController extends Controller
         $request->validate([
             'email' => 'required|email|unique:users,email',
             'username' => 'required|unique:users,username|regex:/^\S*$/',
-            'phone' => 'required',
-            'password' => 'required|min:8',
+            'phone' => 'required|numeric',
+            'password' => [
+                'required',
+                'min:8',
+                'regex:/[a-z]/', // harus mengandung huruf kecil
+                'regex:/[A-Z]/', // harus mengandung huruf kapital
+                'regex:/[0-9]/', // harus mengandung angka
+            ],
+        ], [
+            'email.required' => 'Email wajib diisi',
+            'email.email' => 'Email tidak valid',
+            'email.unique' => 'Email sudah terdaftar',
+            'username.required' => 'Username wajib diisi',
+            'username.unique' => 'Username sudah terdaftar',
+            'username.regex' => 'Username tidak boleh mengandung spasi',
+            'phone.required' => 'Nomor telepon wajib diisi',
+            'phone.numeric' => 'Nomor telepon harus berupa angka',
+            'password.required' => 'Kata sandi wajib diisi',
+            'password.min' => 'Kata sandi harus minimal 8 karakter',
+            'password.regex' => 'Kata sandi harus mengandung huruf kecil, huruf kapital, dan angka',
         ]);
 
         $data['email'] = $request->email;

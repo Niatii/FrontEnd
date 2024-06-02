@@ -49,7 +49,7 @@
                         @csrf
                         <div>
                             <label for="email" class="block mb-2 text-xs  text-white">Masukkan alamat email anda</label>
-                            <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 md:text-xs rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full px-3 placeholder:text-xs" placeholder="Email" value="{{ old('email') }}">
+                            <input type="text" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 md:text-xs rounded-xl focus:ring-primary-600 focus:border-primary-600 block w-full px-3 placeholder:text-xs" placeholder="Email" value="{{ old('email') }}">
                         </div>
                         @error('email')
                         <small>{{ $message }}</small>

@@ -23,6 +23,8 @@
 
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 </head>
 
@@ -59,6 +61,20 @@
 
     <!-- footer -->
     @include('components.footerguest')
+
+    @if (session('success'))
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            Swal.fire({
+                position: "middle",
+                icon: "success",
+                title: "{{ session('success') }}",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        });
+    </script>
+    @endif
 
 
 

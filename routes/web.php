@@ -20,6 +20,8 @@ use App\Models\Pertanyaan;
 Route::prefix('auth')->group(function () {
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/sign', [LoginController::class, 'sign'])->name('sign');
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
 
 
     Route::get('/daftar', [LoginController::class, 'daftar'])->name('daftar');

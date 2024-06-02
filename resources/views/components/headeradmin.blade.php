@@ -15,7 +15,7 @@
                 <ul class="dropdown bg-fot absolute top-0 right-0 mt-10 lg:mt-12 py-3 px-4 mr-5 lg:px-8 shadow-md z-20 hidden
                         transition duration-700" id="dropdownuser">
                     <li class="my-1">
-                        <a href="/" class="hover:text-sky-600">
+                        <a href="{{ route('logout') }}" class="hover:text-sky-600">
                             Logout
                         </a>
                     </li>
