@@ -23,6 +23,9 @@
     <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+    <!-- Script modal -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 </head>
 <body class="bg-latar text-black pb-12 min-h-screen">
     
@@ -32,9 +35,15 @@
     <!-- Content Start -->
     <section  class="pt-36 sm:pt-40 mb-12 mx-8">
         @if (session('success'))
-        <div class="bg-blue-400 text-white p-4 rounded mb-8" style=" margin-bottom: 1rem;">
-            {{ session('success') }}
-        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                Swal.fire({
+                    title: "{{ session('success') }}",
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+            });
+        </script>
         @endif
 
 
